@@ -12,7 +12,14 @@
   </head>
   <body>
     <div class='header'>
-    <img src="../asset/img/chanpin.png" alt="">   
+      <ul class='lunbo'>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+      </ul>
+      <div class='injurd'>1/6</div>
     </div>
 
     <div class='middle'>
@@ -123,6 +130,41 @@
         } else {
           location.href = 'returnGoodsDetail.html'
         }
+      })
+      var touchMove = 0
+      var start = ''
+      var end = ''
+      $('.lunbo')[0].addEventListener('touchstart', function (e) {
+        clearInterval(timer);
+        start = e.touches[0].clientX
+      })
+      $('.lunbo')[0].addEventListener('touchmove', function (e) {
+        end = e.touches[0].clientX
+      })
+      var current = 0
+      var selfs = function () {
+        if (current > -400) {
+          current -= 100
+        } else {
+          current = 0
+        }
+        $('.lunbo').css({left: current + '%'})
+      }
+      var timer = setInterval(selfs, 3000)
+      $('.header')[0].addEventListener('touchend', function (e) {
+        timer = setInterval(selfs,2000)
+        touchMove = end - start
+        if (touchMove > 50) {
+          if (current < 0) {
+            current += 100
+          }
+        }
+        if (touchMove < -50) {
+          if (current > -400) {
+            current -= 100
+          }
+        }
+        $('.lunbo').css({left: current + '%'})
       })
     })
     </script>
