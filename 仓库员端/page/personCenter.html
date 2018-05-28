@@ -48,17 +48,19 @@
       </div>
     </div>
     <script>
-      $('#picture').click(function(){
-        $('#editPicture').removeClass('hiddens')
-      })
-      $('.cancleEdit').click(function(){
-        $('#editPicture').addClass('hiddens')
-      })
-      $('#suggestion').click(function(){
-         location.href='suggestionFeedback.html'
-      })
-      $('#aboutUs').click(function(){
-         location.href='aboutUs.html'
+      $(function(){
+        $('#picture').click(function(){
+          $('#editPicture').removeClass('hiddens')
+        })
+        $('.cancleEdit').click(function(){
+          $('#editPicture').addClass('hiddens')
+        })
+        $('#suggestion').click(function(){
+           location.href='suggestionFeedback.html'
+        })
+        $('#aboutUs').click(function(){
+           location.href='aboutUs.html'
+        })
       })
     </script>
   </body>
