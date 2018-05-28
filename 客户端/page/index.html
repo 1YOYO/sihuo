@@ -19,7 +19,7 @@
         <li><img src="../asset/img/chanpin.png" alt=""></li>
         <li><img src="../asset/img/chanpin.png" alt=""></li>
       </ul>
-      <div class='injurd'>1/6</div>
+      <div class='injurd'>1/5</div>
     </div>
 
     <div class='middle'>
@@ -142,13 +142,17 @@
         end = e.touches[0].clientX
       })
       var current = 0
+      let n = 1
       var selfs = function () {
         if (current > -400) {
           current -= 100
+          n += 1
         } else {
           current = 0
+          n = 1
         }
         $('.lunbo').css({left: current + '%'})
+        $('.header').find('.injurd').html(n +'/6')
       }
       var timer = setInterval(selfs, 3000)
       $('.header')[0].addEventListener('touchend', function (e) {
@@ -157,14 +161,18 @@
         if (touchMove > 50) {
           if (current < 0) {
             current += 100
+            n -= 1
           }
         }
         if (touchMove < -50) {
           if (current > -400) {
             current -= 100
+            n += 1
           }
         }
         $('.lunbo').css({left: current + '%'})
+        console.log($('.header').find('.injurd'));
+        $('.header').find('.injurd').html(n +'/5')
       })
     })
     </script>
