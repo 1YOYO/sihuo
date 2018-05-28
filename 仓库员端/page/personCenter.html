@@ -41,8 +41,11 @@
       </div>
       <div class='editPicture hiddens' id='editPicture'>
         <ul>
-          <li>拍照</li>
-          <li>相册</li>
+          <!-- <li>拍照</li> -->
+          <li>
+          <label>照相机</label>
+          <input type="file" id='camera' accept="image/*" capture='camera'></li>
+          <li>相册<input type="file" id='picture' accept="image/gif,image/jpeg,image/bmp"></li>
           <li class='cancleEdit'>取消</li>
         </ul>
       </div>
@@ -61,6 +64,18 @@
         $('#aboutUs').click(function(){
            location.href='aboutUs.html'
         })
+        // var file = document.querySelector('#picture');
+        // if (getIos()) {
+        //     file.removeAttribute("capture");
+        // }
+        // function getIos() {
+        //     var ua=navigator.userAgent.toLowerCase();
+        //     if (ua.match(/iPhone\sOS/i) == "iphone os") {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
       })
     </script>
   </body>

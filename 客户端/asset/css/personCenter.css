@@ -153,3 +153,11 @@ body{
 .editPicture.hiddens{
   display: none;
 }
+
+.editPicture li input{
+  position: absolute;
+  width: 7.5rem;
+  height: 1.1rem;
+  left: 0;
+  opacity: 0;
+}
