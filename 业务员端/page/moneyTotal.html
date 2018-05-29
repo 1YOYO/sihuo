@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
   <title>金额统计</title>
+  <link rel="stylesheet" href="../asset/datePicker/css/reset.css">
   <link rel="stylesheet" href="../asset/css/normal.css">
   <link rel="stylesheet" href="../asset/css/moneyTatal.css">
+  <link rel="stylesheet" href="../asset/datePicker/css/style.css">
+  <script src="../asset/datePicker/js/prefixfree.min.js"></script>
   <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -15,7 +18,7 @@
     		<p>2018年</p>
     		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
     	</div>
-    	<div class='icon'></div>
+    	<div class='icon' id='dateIcon'></div>
     </div>
     <div class='money-list'>
     	<div class='plist-parent'>
@@ -84,20 +87,40 @@
   			</ul>
   		</div>
     </div>
+    <div class='dateBox'>
+      <div id="datepicker" class="calendar"></div>
+    </div>
   </div>
   <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+  <!-- <script src='../asset/datePicker/js/jquery-1.8.3.min.js'></script> -->
+  <script src='../asset/datePicker/js/jquery-ui.js'></script>
+  <script src="../asset/datePicker/js/index.js"></script>
   <script>
-    $('.plist-parent').each(function(index, el) {
-	    $(this).click(function(e){
-	    	if($(e.currentTarget).find('.arrow').hasClass('xia')) {
-	    		$(e.currentTarget).find('.arrow').removeClass('xia')
-	    	} else {
-	    		$(e.currentTarget).find('.arrow').addClass('xia')
-	    	}
-	      // $(e.currentTarget).find('.arrow').hasClass('xia')
-	      $(e.currentTarget).find('ul').slideToggle();
-	    })
-    });
+    $(function(){
+      $('.plist-parent').each(function(index, el) {
+        $(this).click(function(e){
+          if($(e.currentTarget).find('.arrow').hasClass('xia')) {
+            $(e.currentTarget).find('.arrow').removeClass('xia')
+          } else {
+            $(e.currentTarget).find('.arrow').addClass('xia')
+          }
+          // $(e.currentTarget).find('.arrow').hasClass('xia')
+          $(e.currentTarget).find('ul').slideToggle();
+        })
+      });
+      $( ".dateBox" ).hide()
+      $('#dateIcon').click(function(){
+        $( ".dateBox" ).show() // 显示日历
+      })
+      $( "#datepicker" ).datepicker({ 
+        firstDay: 1,
+        onSelect: function (dateText, inst) {
+          console.log(dateText) // 打印选择日期
+          $('.dateBox').hide() // 隐藏日历
+          // console.log(inst)
+        }
+      });
+    })
   </script>
 </body>
 </html>
