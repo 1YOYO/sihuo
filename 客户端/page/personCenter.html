@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <!-- <meta name="format-detection" content="telephone=no,email=no"> -->
+    <title>个人中心</title>
+    <link href="../asset/css/normal.css" rel="stylesheet">
+    <link rel="stylesheet" href="../asset/css/personCenter.css">
+    <script src='../asset/js/jquery.min.js'></script>
+    <script src='../asset/js/public.js'></script>
+  </head>
+  <body>
+    <div class='personCenter'>
+      <div class='header'>
+        <img src="../asset/img/personal_head_bg@3x.png" alt="" id='picture'>
+        <div class='perName'>
+          <span>我为芯片代言</span>
+        </div>
+      </div>
+      <div class='middle'>
+        <ul>
+          <li id='appRefund'>
+            <p class='title'><span class='line'>申请退货</span><span></span></p>
+          </li>
+          <li id='suggestion'>
+            <p class='title'><span class='line'>意见反馈</span><span></span></p>
+          </li>
+          <li id='aboutUs'>
+            <p class='title last-title'><span class='line'>关于我们</span><span></span></p>
+          </li>
+        </ul>
+      </div>
+      <!-- 底部 -->
+      <div class='foots'>
+        <a class='lf' href='index.html'>
+        <img src="../asset/img/tab_home_default@3x.png" alt=""><br/>
+        首页
+        </a>
+        <a class='rt'>
+          <img src="../asset/img/tab_personal_red@3x.png" alt=""><br/>
+          个人中心
+        </a>
+      </div>
+      <div class='editPicture hiddens' id='editPicture'>
+        <ul>
+          <li>
+          <label>照相机</label>
+          <input type="file" id='camera' accept="image/*" capture='camera'></li>
+          <li>相册<input type="file" id='picture' accept="image/gif,image/jpeg,image/bmp"></li>
+          <li class='cancleEdit'>取消</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $('#picture').click(function(){
+        $('#editPicture').removeClass('hiddens')
+      })
+      $('.cancleEdit').click(function(){
+        $('#editPicture').addClass('hiddens')
+      })
+      $('#suggestion').click(function(){
+         location.href='suggestionFeedback.html'
+      })
+      $('#aboutUs').click(function(){
+         location.href='aboutUs.html'
+      })
+      $('#appRefund').click(function(){
+        location.href = 'applyReturnGoods.html'
+      })
+    </script>
+  </body>
+</html>

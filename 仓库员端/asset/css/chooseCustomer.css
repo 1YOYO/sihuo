@@ -2,7 +2,7 @@
 	height: 100vh;
 	overflow: hidden;
 	background: #f2f5f5;
-	font-size: 14px;
+	font-size: 15px;
 }
 #choose-customer ul{
 	background: #fff;
@@ -19,7 +19,7 @@
 }
 #choose-customer .sure{
 	width: 100%;
-  text-align: center;
+    text-align: center;
 	background: #fff;
 	height: 1.0rem;
 	line-height: 1.0rem;
@@ -27,6 +27,8 @@
 	bottom: 0px;
 	left: 0px;
 	box-shadow: 1px 0px 5px 2px #e0e0e0;
+	font-size: 17px;
+	color: #CE0010;
 }
 #choose-customer ul li .duigou{
  float: right;

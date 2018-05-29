@@ -12,7 +12,7 @@
   margin: 0px auto;
 }
 #deliver-detail .top{
-	height: 2.76rem;
+	min-height: 2.76rem;
 	font-size: 14px;
 }
 #deliver-detail .top .title{
@@ -96,7 +96,6 @@
 	position: relative;
 	top:0px;
 	left:0px;
-	font-size: 14px;
 }
 #deliver-detail .center:after{
 	content: '';
@@ -117,6 +116,9 @@
 	vertical-align: middle;
 	/*border: 1px solid red;*/
 }
+#deliver-detail .center >div h3{
+	font-size: 17px;
+}
 #deliver-detail .center >div:nth-child(1) {
 	margin-left: 5%;
 }
@@ -128,17 +130,18 @@
   width: 68%;
 }
 #deliver-detail .center >div:nth-child(2) p{
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
   font-weight: bold;
+  font-size: 13px;
 }
 #deliver-detail .center >div:nth-child(2) p.delivertime{
   font-weight: normal;
   color: #868686;
+  font-size: 12px;
 }
 #deliver-detail .bottom{
   margin-top: 0.25rem;
   min-height: 1.0rem;
-  font-size: 14px;
 }
 #deliver-detail .bottom ul {
 	/*border: 1px solid red;*/
@@ -162,13 +165,14 @@
 	/*border: 1px solid blue;*/
 	width: 80%;
 	padding-bottom: 15px;
+	font-size: 14px;
 }
 #deliver-detail .bottom ul li .msg p{
 	padding-bottom: 5px;
 }
 #deliver-detail .bottom ul li .msg p:nth-child(2){
 	color: #999;
-	font-size: 0.24rem;
+	font-size: 12px;
 }
 #deliver-detail .bottom ul li .timeline .times{
 	display: inline-block;

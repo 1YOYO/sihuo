@@ -16,9 +16,15 @@
           王毅
         </div>
         <ul class='customerInfo'>
-          <li><span>收货人</span>王毅</li>
-          <li><span>收货地址</span>深圳市龙岗区王道街道158号</li>
-          <li><span>联系方式</span>15566789912</li>
+          <li>
+            <span>收货人</span>
+            <span class='cl_333'>王毅</span></li>
+          <li>
+            <span>收货地址</span>
+            <span class='cl_333'>深圳市龙岗区王道街道158号</span></li>
+          <li>
+            <span>联系方式</span>
+            <a href="tel:15566789912"><span class='cl_333'>15566789912</span></a></li>
         </ul>
       </div>
       <ul class='inputInfo'>
@@ -40,8 +46,11 @@
         location.href = 'chooseCustomer.html'
       })
       $('#submit').click(function(){
-        console.log('234')
-        location.href = 'deliverGoods.html'
+        $(this).addClass('tooltips')
+        setTimeout(function () {
+          $('#submit').removeClass('tooltips')
+          location.href = 'deliverGoods.html'
+        }, 1500);
       })
     </script>
   </body>

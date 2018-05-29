@@ -18,7 +18,7 @@ body{
 }
 .header .perName{
   color:#fff;
-  font-size: 0.28rem;
+  font-size: 14px;
 }
 .header .perName span{
   display: inline-block;
@@ -29,7 +29,10 @@ body{
   margin-top:0.2rem;  
 }
 .middle{
-  padding:0.2rem;
+  /*padding:0.2rem;*/
+  width: 7.1rem;
+  margin: 0.2rem auto;
+  height: 3.33rem;
 }
 .middle ul{
   background: #fff;
@@ -37,15 +40,63 @@ body{
   box-shadow: 0 0 0.04rem 0 rgba(196,196,196,0.50);
 }
 .middle ul li{
-  height:0.9rem;
-  line-height: 0.9rem;
-  padding:0 0.4rem;
+  height:1.1rem;
+  line-height: 1.1rem;
   background: url('../img/ic_more_gray@3x.png') no-repeat;
   background-size: 0.14rem 0.26rem;
-  background-position: 95% center; 
+  background-position: 95% 0.38rem; 
+  /*border: 1px solid blue;*/
 }
-.middle ul li:first-child{
-  border:1px solid #f1f1f1;
+.middle .title span {
+  display: inline-block;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  width: 3.86rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+.middle .title span:nth-child(2){
+  width: 2.2rem;
+  height: 0.95rem;
+  float: right;
+  border-bottom: 1px solid #eee;
+}
+.middle .title .line{
+  padding-left: 0.3rem;
+}
+.middle .title .line::after{
+  border-bottom: 1px solid #eee;
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -0.18rem;
+  width: 0.2rem;
+  height: 0px;
+  transform: rotate(-45deg);
+  transform-origin: 0px 0px;
+}
+.middle .title span:nth-child(2)::before{
+  border-bottom: 1px solid #eee;
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -0.62rem;
+  width: 0.3rem;
+  height: 0px;
+}
+.middle .last-title{
+  /*border: 1px solid red;*/
+}
+.middle .last-title span{
+  border-bottom: none;
+}
+.middle .last-title span:nth-child(2){
+  border-bottom: none;
+}
+.middle .last-title .line::after, .middle .last-title span:nth-child(2)::before{
+  display: none;
 }
 .foots{
   height:1.2rem;
@@ -89,7 +140,7 @@ body{
   line-height: 1.1rem;
   text-align: center;
   background: #fff;
-  font-size:0.32rem;
+  font-size:16px;
 }
 .editPicture ul li:first-child{
   border-bottom: 1px solid #f1f1f1;
@@ -100,4 +151,12 @@ body{
 }
 .editPicture.hiddens{
   display: none;
+}
+
+.editPicture li input{
+  position: absolute;
+  width: 7.5rem;
+  height: 1.1rem;
+  left: 0;
+  opacity: 0;
 }

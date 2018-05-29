@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>金额统计</title>
+  <link rel="stylesheet" href="../asset/css/normal.css">
+  <link rel="stylesheet" href="../asset/css/moneyTatal.css">
+  <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id='money-tatal'>
+    <div class='header'>
+    	<div class='h-right'>
+    		<p>2018年</p>
+    		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
+    	</div>
+    	<div class='icon'></div>
+    </div>
+    <div class='money-list'>
+    	<div class='plist-parent'>
+  			<div class='pList'>
+  				<div class='h-right'>
+		    		<p>2018-05</p>
+		    		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
+		    	</div>
+		    	<div class='arrow xia'></div>
+  			</div>
+  			<ul>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-05-01</p>
+			    		<p class='num'><span>订单 100</span></p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-05-01</p>
+			    		<p class='num'><span>订单 100</span</p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-05-01</p>
+			    		<p class='num'><span>订单 100</span></p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  			</ul>
+  		</div>
+
+  		<div class='plist-parent'>
+  			<div class='pList'>
+  				<div class='h-right'>
+		    		<p>2018-04</p>
+		    		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
+		    	</div>
+		    	<div class='arrow'></div>
+  			</div>
+  			<ul class='haslist'>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-04-22</p>
+			    		<p class='num'><span>订单 100</span></p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-04-22</p>
+			    		<p class='num'><span>订单 100</span</p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  				<li class='clist'>
+  					<div class='h-right'>
+			    		<p>2018-04-22</p>
+			    		<p class='num'><span>订单 100</span></p>
+			    	</div>
+			    	<div class='number'>￥89.00</div>
+  				</li>
+  			</ul>
+  		</div>
+    </div>
+  </div>
+  <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $('.plist-parent').each(function(index, el) {
+	    $(this).click(function(e){
+	    	if($(e.currentTarget).find('.arrow').hasClass('xia')) {
+	    		$(e.currentTarget).find('.arrow').removeClass('xia')
+	    	} else {
+	    		$(e.currentTarget).find('.arrow').addClass('xia')
+	    	}
+	      // $(e.currentTarget).find('.arrow').hasClass('xia')
+	      $(e.currentTarget).find('ul').slideToggle();
+	    })
+    });
+  </script>
+</body>
+</html>

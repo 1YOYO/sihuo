@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>订单状态</title>
+  <link rel="stylesheet" href="../asset/css/normal.css">
+  <link rel="stylesheet" href="../asset/css/customerOrder.css">
+  <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id='customer-order'>
+	  <ul class='tab'>
+	  	<li class='active' id='all'><span>全部</span></li>
+	  	<li id='zaiTus'><span>在途</span></li>
+	  	<li id='receiveds'><span>已收货</span></li>
+	  	<li id='backs'><span>退货</span></li>
+	  </ul>
+	  <div class='contents'>
+	  	<ul>
+	  		<li>
+	  			<div class='content'>
+		        <span></span>
+		        <div>
+		          <p><span>收货人：刘芳</span><a href="tel:15635896654"><span class='tel'>15635896654</span></a> </p>
+		          <p>广东省深圳市宝安区龙塔街道红枫路2号邦兴佳苑4栋1单元11-2</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status'>在途</span>
+		      </div>
+	  		</li>
+	  		<li>
+	  			<div class='content'>
+		        <span></span>
+		        <div>
+		          <p><span>收货人：刘芳</span><a href="tel:15635896654"><span class='tel'>15635896654</span></a></p>
+		          <p>广东省深圳市宝安区龙塔街道红枫路2号邦兴佳苑4栋1单元11-2</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status' style='color: #13B188'>已收货</span>
+		      </div>
+	  		</li>
+
+	  		<li>
+	  			<div class='content returnContent'>
+		        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+		        <div class='contentright'>
+		          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+		          <p><span>放心耗材</span></p>
+		          <p>￥ 1288.90</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status' style='color: #666'>退货 (未审核)</span>
+		      </div>
+	  		</li>
+	  		<li>
+	  			<div class='content returnContent'>
+		        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+		        <div class='contentright'>
+		          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+		          <p><span>放心耗材</span></p>
+		          <p>￥ 1288.90</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status' style='color: #666'>退货 (已同意)</span>
+		      </div>
+	  		</li>
+	  		<li>
+	  			<div class='content returnContent'>
+		        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+		        <div class='contentright'>
+		          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+		          <p><span>放心耗材</span></p>
+		          <p>￥ 1288.90</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status' style='color: #666'>退货 (已拒绝)</span>
+		      </div>
+	  		</li>
+	  		<li>
+	  			<div class='content returnContent'>
+		        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+		        <div class='contentright'>
+		          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+		          <p><span>放心耗材</span></p>
+		          <p>￥ 1288.90</p>
+		        </div>
+		      </div>
+		      <div class='content-bottom'>
+		      	<span>发货单号：123854680158</span>
+		      	<span class='rt status' style='color: #666'>退货中</span>
+		      </div>
+	  		</li>
+	  	</ul>
+	  </div>
+	  <!-- 底部 -->
+    <div class='foots'>
+      <a class='' href='myCustomer.html'>
+        <img src="../asset/img/tab_customer_default@3x.png" alt=""><br/>
+        我的客户
+      </a>
+      <a class='' href='#'>
+        <img src="../asset/img/tab_order_red@3x.png" alt=""><br/>
+        订单状态
+      </a>
+      <a class='' href='personCenter.html'>
+        <img src="../asset/img/tab_personal_default@3x.png" alt=""><br/>
+        个人中心
+      </a>
+     </div>
+  </div>
+  <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+      $('#zaiTus').click(function(){
+         location.href='zaiTuDetail.html'
+      })
+      $('#receiveds').click(function(){
+         location.href='receivedGoodsDetail.html'
+      })
+      $('#backs').click(function(){
+         location.href='returnGoodsDetail.html'
+      })
+  </script>
+</body>
+</html>

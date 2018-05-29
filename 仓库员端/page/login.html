@@ -21,7 +21,10 @@
       <div class='inputs'>
         <span>验证码</span>
         <input type="text" placeholder="请输入验证码">
-        <span class='yzm'>获取验证码</span>
+        <span class='yzm'>
+          <span class='yzm-word'>获取验证码</span>
+          <span class='count-time'>60s</span>
+        </span>
       </div>
       <div class='submit'>登 录</div>
     </div>
@@ -34,6 +37,21 @@
   <script>
     $('.submit').click(function(){
       location.href = 'deliverGoods.html'
+    })
+    $('.yzm').click(function(e){
+      var time = 60
+      $('.yzm-word').hide()
+      $('.count-time').show()
+      var timer = setInterval(function () {
+        if (time > 0) {
+          time--
+          $('.count-time').html(time + 's')
+        } else {
+          clearInterval(timer);
+          $('.yzm-word').show()
+          $('.count-time').hide()
+        }
+      }, 1000);
     })
   </script>
 </body>

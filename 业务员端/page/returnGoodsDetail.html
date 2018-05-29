@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>退货中</title>
+  <link rel="stylesheet" href="../asset/css/normal.css">
+  <link rel="stylesheet" href="../asset/css/zaiTuDetail.css">
+  <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id='deliver-detail'>
+    <div class='top'>
+      <p class='title'><span class='line'>退货中</span><span></span></p> 
+      <!-- <div class='content'>
+        <span></span>
+        <div>
+          <p><span>收货人：刘芳</span><span class='tel'>15635896654</span></p>
+          <p>广东省深圳市宝安区龙塔街道红枫路2号邦兴佳苑4栋1单元11-2</p>
+        </div>
+      </div> -->
+      <div class='content returnContent'>
+        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+        <div class='contentright'>
+          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+          <p><span>放心耗材</span></p>
+          <p>￥ 1288.90</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class='center'>
+      <div><img src="../asset/img/ic_sf@2x.png" alt=""></div>
+      <div>
+        <h3>顺丰快递</h3>
+        <p>快递单号：8386575735386</p>
+        <p class='delivertime'>下单时间：2018-05-23 14:20</p>
+      </div>
+    </div> -->
+    <div class='centers1'>
+      <h3>退货理由</h3>
+      <p>如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它</p>
+    </div>
+    <div class='centers2'>
+      <p class='title'><span class='line'>申请时间</span><span class='gray'>2018-05-23</span></p>
+      <div class='titles'><span>快递单号</span><span class='gray'>1294276873639</span></div>
+    </div>
+    <div class='bottom'>
+      <ul class='bottomlist'>
+        <li>
+          <div class='timeline'>
+            <span class='times'></span>
+            <span class='line'></span>
+          </div>
+          <div class='msg'>
+            <p>感谢您在京东商城购物，欢迎再次光临！</p>
+            <p>2018-05-04 13:23:00</p>
+          </div>
+        </li>
+        <li>
+          <div class='timeline'>
+            <span class='times'></span>
+            <span class='line'></span>
+          </div>
+          <div class='msg'>
+            <p>配送员【李光伟】已发出，联系电话：<a href="tel:023-98764324" class='tels'>023-98764324</a>，感谢您的耐心等候，参加评价还能赢取邮票哦</p>
+            <p>2018-05-04 13:23:00</p>
+          </div>
+        </li>
+        <li>
+          <div class='timeline'>
+            <span class='times'></span>
+            <span class='line'></span>
+          </div>
+          <div class='msg'>
+            <p>您的订单在京东验货成功，正在分配配送员</p>
+            <p>2018-05-04 13:23:00</p>
+          </div>
+        </li>
+        <li>
+          <div class='timeline'>
+            <span class='times'></span>
+            <span class='line'></span>
+          </div>
+          <div class='msg'>
+            <p>您的订单在京东发货完成，准备送往京东重庆站</p>
+            <p>2018-05-04 13:23:00</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class='footer'>确认收货</div> -->
+  </div>
+  <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
+  $(function () {
+    $('.bottomlist li').each(function(index, val) {
+      $(val).find('.line').css({height: $(val).find('.msg').height() + 20})
+      if (index !== 0) {
+        $(val).find('.msg').css({color: '#999'})
+      }
+    });
+  })
+</script>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <!-- <meta name="format-detection" content="telephone=no,email=no"> -->
+    <title>首页</title>
+    <link href="../asset/css/normal.css" rel="stylesheet">
+    <link rel="stylesheet" href="../asset/css/index.css">
+    <script src='../asset/js/jquery.min.js'></script>
+    <script src='../asset/js/public.js'></script>
+  </head>
+  <body>
+    <div class='header'>
+      <ul class='lunbo'>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+        <li><img src="../asset/img/chanpin.png" alt=""></li>
+      </ul>
+      <div class='injurd'>1/5</div>
+    </div>
+
+    <div class='middle'>
+      <ul class='nav'>
+        <li dataid='onWay' class='active'><b></b><span>1</span><br/>在途中</li>
+        <li dataid='shipped'><b></b><span>2</span><br/>已收货</li>
+        <li dataid='returned'><b></b><span>8</span><br/>退货</li>
+      </ul>
+      <div class='content'>
+        <!-- 在途中 -->
+        <div class='onWay show'>
+          <div class='box'>
+            <div class='tops'>
+              <ul>
+                <li class='lf'>收货人：刘芳</li>
+                <li class='rt'><a href="tel:15239190232">15239190232</a></li>
+              </ul>
+              <div class='clear'>广东省深圳市宝安区龙塔街道红枫路3号邦兴佳苑4栋</div>
+            </div>
+            <div class='bottoms'>
+              <span class='state'>在途中</span>
+              <span class='num'>发货单号：20983532636636</span>
+            </div>
+          </div>
+        </div>
+        <!-- 已收货 -->
+        <div class='shipped'>
+          <div class='box'>
+            <div class='tops'>
+              <ul>
+                <li class='lf'>收货人：刘芳</li>
+                <li class='rt'><a href="tel:15239190232">15239190232</a></li>
+              </ul>
+              <div class='clear'>广东省深圳市宝安区龙塔街道红枫路3号邦兴佳苑4栋</div>
+            </div>
+            <div class='bottoms'>
+              <span class='state'>已收货</span>
+              <span class='num'>发货单号：20983532636636</span>
+            </div>
+          </div>
+          <div class='box'>
+            <div class='tops'>
+              <ul>
+                <li class='lf'>收货人：刘芳</li>
+                <li class='rt'><a href="tel:15239190232">15239190232</a></li>
+              </ul>
+              <div class='clear'>广东省深圳市宝安区龙塔街道红枫路3号邦兴佳苑4栋</div>
+            </div>
+            <div class='bottoms'>
+              <span class='state'>已收货</span>
+              <span class='num'>发货单号：20983532636636</span>
+            </div>
+          </div>
+        </div>
+        <!-- 退货 -->
+        <div class='returned'>
+          <div class='box'>
+            <div class='returnContent' style='padding:0.2rem;'>
+              <img src="../asset/img/xinpian.png" alt="">
+              <div class='contentright'>
+                <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+                <p><span>放心耗材</span></p>
+                <p>￥ 1288.90</p>
+              </div>
+            </div>
+            <div class='bottoms'>
+              <span class='state'>退货</span>
+              <span class='num'>快递单号：20983532636636</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部tab -->
+    <div class='foots'>
+        <a class='lf'>
+        <img src="../asset/img/tab_home_red@3x.png" alt=""><br/>
+        首页
+        </a>
+        <a class='rt' href='personCenter.html'>
+          <img src="../asset/img/tab_personal_default@3x.png" alt=""><br/>
+          个人中心
+        </a>
+      </div>
+    <script>
+    $(function () {
+      $('.nav li').click(function(e){
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        var className = $(this).attr("dataid")
+        $('.content .' + className).addClass('show')
+        $('.content .' + className).siblings().removeClass('show')
+      })
+      $('.onWay .box').click(function(e){
+        if (e.target.localName=='a') {
+        } else {
+          location.href = 'zaiTuDetail.html'
+        }
+      })
+      $('.shipped .box').click(function(e){
+        if (e.target.localName=='a') {
+        } else {
+          location.href = 'receivedGoodsDetail.html'
+        }
+      })
+      $('.returned .box').click(function(e){
+        if (e.target.localName=='a') {
+        } else {
+          location.href = 'returnGoodsDetail.html'
+        }
+      })
+      var touchMove = 0
+      var start = ''
+      var end = ''
+      $('.lunbo')[0].addEventListener('touchstart', function (e) {
+        clearInterval(timer);
+        start = e.touches[0].clientX
+      })
+      $('.lunbo')[0].addEventListener('touchmove', function (e) {
+        end = e.touches[0].clientX
+      })
+      var current = 0
+      let n = 1
+      var selfs = function () {
+        if (current > -400) {
+          current -= 100
+          n += 1
+        } else {
+          current = 0
+          n = 1
+        }
+        $('.lunbo').css({left: current + '%'})
+        $('.header').find('.injurd').html(n +'/5')
+      }
+      var timer = setInterval(selfs, 3000)
+      $('.header')[0].addEventListener('touchend', function (e) {
+        timer = setInterval(selfs,2000)
+        touchMove = end - start
+        if (touchMove > 50) {
+          if (current < 0) {
+            current += 100
+            n -= 1
+          }
+        }
+        if (touchMove < -50) {
+          if (current > -400) {
+            current -= 100
+            n += 1
+          }
+        }
+        $('.lunbo').css({left: current + '%'})
+        console.log($('.header').find('.injurd'));
+        $('.header').find('.injurd').html(n +'/5')
+      })
+    })
+    </script>
+  </body>
+</html>

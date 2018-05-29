@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>退货中</title>
+  <link rel="stylesheet" href="../asset/css/normal.css">
+  <link rel="stylesheet" href="../asset/css/zaiTuDetail.css">
+  <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id='deliver-detail'>
+    <div class='top'>
+      <p class='title'><span class='line'>退货</span><span></span></p> 
+      <div class='content returnContent'>
+        <div class='imgs'><img src="../asset/img/xinpian.png" alt=""></div>
+        <div class='contentright'>
+          <p>芯片识别烧写器新品上市闪亮登场芯片识别烧写器芯片识别烧写器</p>
+          <p><span>放心耗材</span></p>
+          <p>￥ 1288.90</p>
+        </div>
+      </div>
+    </div>
+    <div class='centers1'>
+      <h3>退货理由</h3>
+      <p>如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它如果你不能简洁的表达你的想法，那只能说明你不了解它</p>
+    </div>
+    <div class='centers2'>
+      <p class='title'><span class='line'>申请时间</span><span class='gray'>2018-05-23</span></p>
+      <div class='titles'><span>快递单号</span><span class='gray'>1294276873639</span></div>
+    </div>
+  </div>
+  <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
+  $(function () {
+    $('.bottomlist li').each(function(index, val) {
+      $(val).find('.line').css({height: $(val).find('.msg').height() + 20})
+      if (index !== 0) {
+        $(val).find('.msg').css({color: '#999'})
+      }
+    });
+  })
+</script>
+</html>

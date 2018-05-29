@@ -25,6 +25,7 @@ body{
   border:1px solid #444;
   border-radius: 4px;
   margin-top:0.89rem;
+  color:#000;
   font-weight: bold;
 }
 .records{

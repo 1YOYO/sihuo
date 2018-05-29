@@ -15,7 +15,15 @@
   	 <textarea name="suggest" id="suggest" placeholder="请输入您的意见"></textarea>
   	</div>
     <div class='foots'>
-      <button>提 交</button>
-    </div> 
+      <button id='submit'>提 交</button>
+    </div>
+    <script>
+      $('#submit').click(function(){
+        $(this).addClass('tooltips')
+        setTimeout(function () {
+          $('#submit').removeClass('tooltips')
+        }, 1500);
+      })
+    </script>
   </body>
 </html>

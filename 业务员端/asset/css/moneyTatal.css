@@ -1,0 +1,90 @@
+body {
+	height: 100vh;
+	background: #ededed;
+}
+#money-tatal .header{
+	height: 1.1rem;
+	font-size: 13px;
+	background: url(../img/money_bg@3x.png) no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+#money-tatal .header >div{
+	display: inline-block;
+}
+#money-tatal .h-right{
+	margin: 0.2rem 0.3rem;
+}
+#money-tatal .h-right .num{
+	margin-top: 0.05rem;
+}
+#money-tatal .h-right .num span{
+	margin-right: 0.4rem;
+}
+#money-tatal div.icon{
+	float: right;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin: 0.3rem;
+	background: url(../img/ic_canlendar@3x.png) no-repeat;
+	background-size: 0.4rem 0.4rem;
+}
+#money-tatal .money-list{
+	margin-top: 0.14rem;
+}
+#money-tatal .money-list .plist-parent{
+	margin-bottom: 0.14rem;
+}
+#money-tatal .money-list .pList{
+	/*border: 1px solid red;*/
+	height: 1.1rem;
+	font-size: 13px;
+	background: #fff;
+	color: #333;
+}
+#money-tatal .money-list .pList >div{
+	display: inline-block;
+}
+#money-tatal .money-list .pList .num{
+	color: #999;
+}
+#money-tatal .money-list .pList .arrow{
+	float: right;
+	width: 0.19rem;
+	height: 0.23rem;
+	background: url('../img/triangle_right@2x.png') no-repeat;
+	background-size: 0.16rem 0.2rem;
+	margin-top: 0.46rem;
+	margin-right: 0.3rem;
+}
+#money-tatal .money-list .pList .arrow.xia{
+	width: 0.23rem;
+	height: 0.16rem;
+	background: url('../img/triangle_down@2x.png') no-repeat 0px -1px;
+	background-size: 0.2rem 0.16rem;
+}
+#money-tatal .money-list .plist-parent .clist{
+	border-bottom: 1px solid #e8e8e8;
+	background: #f6f6f6;
+	font-size: 13px;
+	height: 1.1rem;
+	color: #333;
+}
+#money-tatal .money-list .plist-parent .clist .num{
+	color: #999;
+}
+#money-tatal .money-list .plist-parent .clist .h-right{
+	margin: 0.15rem 0.3rem;
+	display: inline-block;
+}
+#money-tatal .money-list .plist-parent .clist .number{
+	font-size: 18px;
+	color: #CE0010;
+	float: right;
+	margin-right: 0.3rem;
+	height: 1.1rem;
+	line-height: 1.1rem;
+}
+#money-tatal .money-list .plist-parent .haslist{
+	display: none;
+}

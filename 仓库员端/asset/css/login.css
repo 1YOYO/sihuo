@@ -17,7 +17,6 @@
 #login .login-form{
   width: 5.6rem;
   margin: 0px auto;
-  font-size: 14px;
 }
 #login .login-form .inputs {
   width: 100%；
@@ -26,22 +25,26 @@
   border-bottom: 1px solid #ededed;
   padding-left: 0.1rem;
   margin-bottom: 0.5rem;
+  font-size: 15px;
 }
 #login .login-form .inputs >span{
   display: inline-block;
-  width: 1.0rem;
+  width: 1.2rem;
 }
 #login .login-form .inputs input{
   outline: none;
-  height: 0.8rem;
-  width: 4.2rem;
+  height: 0.7rem;
+  width: 4rem;
+  font-size: 15px!important;
+  /*border: 1px solid red;*/
 }
 #login .login-form .inputs:nth-child(2) input{
-  width:2.0rem;
+  width:2.1rem;
 }
 #login .login-form .inputs .yzm{
   width: 1.85rem;
   float: right;
+  font-size: 14px;
 }
 #login .login-form .submit{
   border: 1px solid #C5C5C5;
@@ -51,6 +54,7 @@
   text-align: center;
   margin: 1.05rem auto;
   border-radius: 0.16rem;
+  font-size: 16px;
 }
 #login .footer{
   color: #B6B6B6;
@@ -60,4 +64,8 @@
   position: absolute;
   bottom: 0.2rem;
   left: 0px;
+}
+.count-time{
+  display: none;
+  color: #999;
 }

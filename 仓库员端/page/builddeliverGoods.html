@@ -43,8 +43,11 @@
         location.href = 'chooseCustomer.html'
       })
       $('#submit').click(function(){
-        console.log('234')
-        location.href = 'deliverGoods.html'
+        $(this).addClass('tooltips')
+        setTimeout(function () {
+          $('#submit').removeClass('tooltips')
+          location.href = 'deliverGoods.html'
+        }, 1500);
       })
     </script>
   </body>
