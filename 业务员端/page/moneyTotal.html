@@ -87,7 +87,7 @@
   			</ul>
   		</div>
     </div>
-    <div class='dateBox'>
+    <div class='dateBox hidden'>
       <div id="datepicker" class="calendar"></div>
     </div>
   </div>
@@ -107,18 +107,22 @@
           $(e.currentTarget).find('ul').slideToggle();
         })
       });
-      $( ".dateBox" ).hide()
       $('#dateIcon').click(function(){
-        $( ".dateBox" ).show() // 显示日历
+        $( ".dateBox" ).removeClass('hidden')
       })
       $( "#datepicker" ).datepicker({ 
         firstDay: 1,
         onSelect: function (dateText, inst) {
           console.log(dateText) // 打印选择日期
-          $('.dateBox').hide() // 隐藏日历
+          $('.dateBox').addClass('hidden') // 隐藏日历
           // console.log(inst)
         }
       });
+      $( ".dateBox" ).click(function(e) {
+        if (e.target.className == 'dateBox') {
+          $('.dateBox').addClass('hidden')
+        }
+      })
     })
   </script>
 </body>
