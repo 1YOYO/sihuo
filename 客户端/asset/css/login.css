@@ -25,7 +25,7 @@
   border-bottom: 1px solid #ededed;
   padding-left: 0.1rem;
   margin-bottom: 0.5rem;
-  font-size: 15px;
+  font-size: 0.3rem;
 }
 #login .login-form .inputs >span{
   display: inline-block;
@@ -35,7 +35,7 @@
   outline: none;
   height: 0.7rem;
   width: 4rem;
-  font-size: 15px!important;
+  font-size: 0.3rem!important;
   /*border: 1px solid red;*/
 }
 #login .login-form .inputs input:focue,#login .login-form .inputs input:hover{
@@ -48,7 +48,7 @@
 #login .login-form .inputs .yzm{
   width: 1.85rem;
   float: right;
-  font-size: 14px;
+  font-size: 0.28rem;
 }
 #login .login-form .submit{
   border: 1px solid #C5C5C5;
@@ -58,11 +58,11 @@
   text-align: center;
   margin: 1.05rem auto;
   border-radius: 0.16rem;
-  font-size: 16px;
+  font-size: 0.32rem;
 }
 #login .footer{
   color: #B6B6B6;
-  font-size: 12px;
+  font-size: 0.24rem;
   width: 100%;
   text-align: center;
   position: absolute;
