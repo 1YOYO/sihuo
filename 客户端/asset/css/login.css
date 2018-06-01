@@ -15,7 +15,7 @@
   height: 100%;
 }
 #login .login-form{
-  width: 5.6rem;
+  width: 5.8rem;
   margin: 0px auto;
 }
 #login .login-form .inputs {
@@ -36,6 +36,7 @@
   height: 0.7rem;
   width: 4rem;
   font-size: 0.3rem!important;
+  background-color: transparent;
   /*border: 1px solid red;*/
 }
 #login .login-form .inputs input:focue,#login .login-form .inputs input:hover{
