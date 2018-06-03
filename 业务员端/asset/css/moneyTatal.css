@@ -99,3 +99,8 @@ body {
 #money-tatal .dateBox.hidden{
 	display: none;
 }
+.input-date{
+	/*border:1px solid red;*/
+	width: 0px;
+	height:0px;
+}

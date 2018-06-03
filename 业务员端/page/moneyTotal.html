@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <title>金额统计</title>
-  <link rel="stylesheet" href="../asset/datePicker/css/reset.css">
   <link rel="stylesheet" href="../asset/css/normal.css">
   <link rel="stylesheet" href="../asset/css/moneyTatal.css">
-  <link rel="stylesheet" href="../asset/datePicker/css/style.css">
-  <script src="../asset/datePicker/js/prefixfree.min.js"></script>
   <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <!-- 日历 -->
+  <link href="../asset/date/css/normalize3.0.2.min.css" rel="stylesheet" />
+  <link href="../asset/date/css/style.css?v=7" rel="stylesheet" />
+  <link href="../asset/date/css/mobiscroll.css" rel="stylesheet" />
+  <link href="../asset/date/css/mobiscroll_date.css" rel="stylesheet" />
+  <script src="../asset/date/js/mobiscroll_date.js" charset="gb2312"></script> 
+  <script src="../asset/date/js/mobiscroll.js"></script> 
 </head>
 <body>
   <div id='money-tatal'>
@@ -18,7 +24,11 @@
     		<p>2018年</p>
     		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
     	</div>
-    	<div class='icon' id='dateIcon'></div>
+      <label for="USER_AGE">
+      	<div class='icon input' id='dateIcon'>
+          <input type="text" name="USER_AGE" id="USER_AGE" readonly class="input-date"/>
+        </div>
+      </label>
     </div>
     <div class='money-list'>
     	<div class='plist-parent'>
@@ -87,13 +97,9 @@
   			</ul>
   		</div>
     </div>
-    <div class='dateBox hidden'>
-      <div id="datepicker" class="calendar"></div>
-    </div>
+      
   </div>
   <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
-  <!-- <script src='../asset/datePicker/js/jquery-1.8.3.min.js'></script> -->
-  <script src='../asset/datePicker/js/jquery-ui.js'></script>
   <script>
     $(function(){
       $('.plist-parent').each(function(index, el) {
@@ -107,22 +113,25 @@
           $(e.currentTarget).find('ul').slideToggle();
         })
       });
-      $('#dateIcon').click(function(){
-        $( ".dateBox" ).removeClass('hidden')
-      })
-      $( "#datepicker" ).datepicker({ 
-        firstDay: 1,
-        onSelect: function (dateText, inst) {
-          console.log(dateText) // 打印选择日期
-          $('.dateBox').addClass('hidden') // 隐藏日历
-          // console.log(inst)
-        }
-      });
-      $( ".dateBox" ).click(function(e) {
-        if (e.target.className == 'dateBox') {
-          $('.dateBox').addClass('hidden')
-        }
-      })
+      // 日历
+      var currYear = (new Date()).getFullYear();  
+      var opt={};
+      opt.date = {preset : 'date'};
+      opt.datetime = {preset : 'datetime'};
+      opt.time = {preset : 'time'};
+      opt.default = {
+        theme: 'android-ics light', //皮肤样式
+        display: 'modal', //显示方式 
+        mode: 'scroller', //日期选择模式
+        dateFormat: 'yyyy-mm-dd',
+        lang: 'zh',
+        showNow: true,
+        nowText: "今天",
+        startYear: currYear - 50, //开始年份
+        endYear: currYear + 10 //结束年份
+      };
+
+      $("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
     })
   </script>
 </body>
