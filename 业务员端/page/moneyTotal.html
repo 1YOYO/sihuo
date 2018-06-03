@@ -130,7 +130,7 @@
         startYear: currYear - 50, //开始年份
         endYear: currYear + 10, //结束年份
         onSelect: function (e, a) {
-          $('#getDate').html(a.values[0] + '年' + a.values[1] + '月' + a.values[2] + '日')
+          $('#getDate').html(a.values[0] + '年' + (a.values[1] * 1 + 1) + '月' + a.values[2] + '日')
         }
       };
 
