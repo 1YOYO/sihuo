@@ -19,7 +19,7 @@
   <div id='money-tatal'>
     <div class='header'>
     	<div class='h-right'>
-    		<p>2018年</p>
+    		<p id='getDate'>2018年</p>
     		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
     	</div>
       <label for="USER_AGE">
@@ -128,7 +128,10 @@
         showNow: true,
         nowText: "今天",
         startYear: currYear - 50, //开始年份
-        endYear: currYear + 10 //结束年份
+        endYear: currYear + 10, //结束年份
+        onSelect: function (e, a) {
+          $('#getDate').html(a.values[0] + '年' + a.values[1] + '月' + a.values[2] + '日')
+        }
       };
 
       $("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
