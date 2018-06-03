@@ -14,8 +14,6 @@
   <link href="../asset/date/css/style.css?v=7" rel="stylesheet" />
   <link href="../asset/date/css/mobiscroll.css" rel="stylesheet" />
   <link href="../asset/date/css/mobiscroll_date.css" rel="stylesheet" />
-  <script src="../asset/date/js/mobiscroll_date.js" charset="gb2312"></script> 
-  <script src="../asset/date/js/mobiscroll.js"></script> 
 </head>
 <body>
   <div id='money-tatal'>
@@ -100,6 +98,8 @@
       
   </div>
   <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../asset/date/js/mobiscroll_date.js"></script> 
+  <script src="../asset/date/js/mobiscroll.js"></script> 
   <script>
     $(function(){
       $('.plist-parent').each(function(index, el) {
@@ -125,8 +125,8 @@
         mode: 'scroller', //日期选择模式
         dateFormat: 'yyyy-mm-dd',
         lang: 'zh',
-        showNow: true,
-        nowText: "今天",
+        // showNow: true,
+        // nowText: "今天",
         startYear: currYear - 50, //开始年份
         endYear: currYear + 10 //结束年份
       };
