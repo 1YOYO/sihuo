@@ -753,7 +753,7 @@
                     elm.data('dwro', e.readOnly);
                     e.readOnly = true;
                     // Init show datewheel
-                    elm.bind('focus.dw', function () { that.show(); });
+                    elm.bind('click.dw', function () { that.show(); });
                 }
             }
         };
