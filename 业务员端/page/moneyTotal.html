@@ -10,23 +10,23 @@
   <link rel="stylesheet" href="../asset/css/moneyTatal.css">
   <script src="../asset/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <!-- 日历 -->
-  <link href="../asset/date/css/normalize3.0.2.min.css" rel="stylesheet" />
-  <link href="../asset/date/css/style.css?v=7" rel="stylesheet" />
-  <link href="../asset/date/css/mobiscroll.css" rel="stylesheet" />
-  <link href="../asset/date/css/mobiscroll_date.css" rel="stylesheet" />
+  <script src="../asset/js/datePicker.js" type="text/javascript" charset="utf-8"></script>
+  <!-- <link href="../asset/date/css/normalize3.0.2.min.css" rel="stylesheet" /> -->
+  <!-- <link href="../asset/date/css/style.css?v=7" rel="stylesheet" /> -->
+  <!-- <link href="../asset/date/css/mobiscroll_date.css" rel="stylesheet" /> -->
+  <!-- <link href="../asset/date/css/mobiscroll.css" rel="stylesheet" /> -->
 </head>
 <body>
   <div id='money-tatal'>
     <div class='header'>
     	<div class='h-right'>
     		<p id='getDate'>2018年</p>
-    		<p class='num'><span>订单 100</span><span>金额 ￥100000</span></p>
+    		<p class='num'><span>订单 100</span><span>金额 ￥10000</span></p>
     	</div>
-      <label for="USER_AGE">
-      	<div class='icon input' id='dateIcon'>
-          <input type="text" name="USER_AGE" id="USER_AGE" readonly class="input-date"/>
-        </div>
-      </label>
+      <div class='right-icon'>
+        开始时间 <div class='icon input' id='startTime'></div>
+        结束时间 <div class='icon input' id='endTime'></div>
+      </div>
     </div>
     <div class='money-list'>
     	<div class='plist-parent'>
@@ -98,8 +98,8 @@
       
   </div>
   <script src="../asset/js/public.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../asset/date/js/mobiscroll_date.js"></script> 
-  <script src="../asset/date/js/mobiscroll.js"></script> 
+  <!-- <script src="../asset/date/js/mobiscroll_date.js"></script>  -->
+  <!-- <script src="../asset/date/js/mobiscroll.js"></script>  -->
   <script>
     $(function(){
       $('.plist-parent').each(function(index, el) {
@@ -114,27 +114,49 @@
         })
       });
       // 日历
-      var currYear = (new Date()).getFullYear();  
-      var opt={};
-      opt.date = {preset : 'date'};
-      opt.datetime = {preset : 'datetime'};
-      opt.time = {preset : 'time'};
-      opt.default = {
-        theme: 'android-ics light', //皮肤样式
-        display: 'modal', //显示方式 
-        mode: 'scroller', //日期选择模式
-        dateFormat: 'yyyy-mm-dd',
-        lang: 'zh',
-        showNow: true,
-        nowText: "今天",
-        startYear: currYear - 50, //开始年份
-        endYear: currYear + 10, //结束年份
-        onSelect: function (e, a) {
-          $('#getDate').html(a.values[0] + '年' + (a.values[1] * 1 + 1) + '月' + a.values[2] + '日')
+      var currYear = (new Date()).getFullYear();
+      // var startTimes = currYear
+      // $("#USER_AGE").mobiscroll().date({
+      //   theme: 'android-ics light', //皮肤样式
+      //   display: 'modal', //显示方式 
+      //   mode: 'scroller', //日期选择模式
+      //   dateFormat: 'yyyy-mm-dd',
+      //   lang: 'zh',
+      //   // showNow: true,
+      //   // nowText: "今天",
+      //   startYear: currYear - 50, //开始年份
+      //   endYear: currYear + 10, //结束年份
+      //   onSelect: function (e, a) {
+      //     $('#getDate').html(a.values[0] + '年' + (a.values[1] * 1 + 1) + '月' + a.values[2] + '日')
+      //     startTimes = a.values[0] + '-' + (a.values[1] * 1 + 1) + '-' + a.values[2] + '-'
+      //   }
+      // })
+      var startTimeVal = (currYear - 50) + '-01-01'
+      var calendar_start = new datePicker();
+      var calendar_end = new datePicker();
+      calendar_start.init({
+        'trigger': '#startTime', /*按钮选择器，用于触发弹出插件*/
+        'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+        'minDate': (currYear - 50) + '-01-01',/*最小日期*/
+        'maxDate': (currYear + 10) + '-12-31',/*最大日期*/
+        'onSubmit':function(){/*确认时触发事件*/
+          startTimeVal = calendar_start.value
+        },
+        'onClose':function(){/*取消时触发事件*/
         }
-      };
-
-      $("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+      });
+      calendar_end.init({
+        'trigger': '#endTime',
+        'type': 'date',
+        'minDate': startTimeVal,
+        'maxDate': (currYear + 50) + '-12-31',
+        'onSubmit': function () {
+          console.log(calendar_end.value);
+          if (calendar_start.value > calendar_end.value) {
+            window.alert('结束时间不能早与开始时间')
+          }
+        }
+      });
     })
   </script>
 </body>
