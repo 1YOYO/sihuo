@@ -14,18 +14,29 @@ body {
 }
 #money-tatal .h-right{
 	margin: 0.2rem 0.3rem;
+	margin-right: 0px;
 }
 #money-tatal .h-right .num{
 	margin-top: 0.05rem;
 }
 #money-tatal .h-right .num span{
-	margin-right: 0.4rem;
+	margin-right: 0.2rem;
+}
+#money-tatal .right-icon{
+	/*border: 1px solid red;*/
+	/*float: right;*/
+	position: absolute;
+	top: 0.2rem;
+	right: 0.1rem;
+	font-size: 10px;
 }
 #money-tatal div.icon{
-	float: right;
+	/*border: 1px solid red;*/
+	display: inline-block;
 	width: 0.4rem;
 	height: 0.4rem;
-	margin: 0.3rem;
+	vertical-align: middle;
+	/*margin: 0.3rem;*/
 	background: url(../img/ic_canlendar@3x.png) no-repeat;
 	background-size: 0.4rem 0.4rem;
 }
@@ -98,4 +109,9 @@ body {
 }
 #money-tatal .dateBox.hidden{
 	display: none;
+}
+.input-date{
+	/*border:1px solid red;*/
+	width: 0px;
+	height:0px;
 }
