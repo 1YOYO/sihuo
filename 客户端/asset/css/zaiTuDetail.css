@@ -20,6 +20,13 @@ body{
 	min-height: 2.76rem;
 	font-size: 14px;
 }
+#deliver-detail .top.return-goods{
+	height:2rem;
+	min-height: 2.3rem;
+}
+#deliver-detail .top.return-goods .returnContent >p{
+	display: inline-block;vertical-align: top;font-weight: bold;
+}
 #deliver-detail .top .title{
 	/*border: 1px solid red;*/
 	height: 0.8rem;
@@ -347,4 +354,19 @@ body{
 #deliver-detail .centers2 p .gray, .gray{
 	color: #999;
 	white-space: nowrap;
+}
+
+/*退货详情修改*/
+#deliver-detail .centers2.return-goods .title span{
+	width:3rem;
+}
+#deliver-detail .centers2.return-goods .title span:nth-child(2){
+	text-align: right;
+	padding-right: 0.3rem
+}
+#deliver-detail .centers2.return-goods .title span:nth-child(2)::before{
+	left:-0.4rem;
+}
+#deliver-detail .centers2.return-goods .title .line::after{
+	/*right:0.23rem;*/
 }
