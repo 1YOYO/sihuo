@@ -151,6 +151,7 @@
         'minDate': startTimeVal,
         'maxDate': (currYear + 50) + '-12-31',
         'onSubmit': function () {
+          console.log(calendar_start.value);
           console.log(calendar_end.value);
           if (calendar_start.value > calendar_end.value) {
             window.alert('结束时间不能早与开始时间')

@@ -29,7 +29,7 @@ body{
   font-weight: bold;
 }
 .records{
-  padding:0px 0.4rem;
+  padding:0px 0.4rem 1.2rem;
 }
 .records>p{
   height: 1rem;
@@ -39,6 +39,7 @@ body{
 .records .recordContent{
   background: #fff;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 .records .recordContent ul li{
   height:0.8rem;

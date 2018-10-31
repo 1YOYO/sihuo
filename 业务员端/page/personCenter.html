@@ -13,7 +13,7 @@
   <body>
     <div class='personCenter'>
       <div class='header'>
-        <img src="../asset/img/personal_head_bg@3x.png" alt="" id='picture'>
+        <img src="../asset/img/xinpian.png" alt="" id='picture'>
         <div class='perName'>
           <span>我为芯片代言</span>
         </div>
@@ -51,7 +51,7 @@
           <li>
           <label>照相机</label>
           <input type="file" id='camera' accept="image/*" capture='camera'></li>
-          <li>相册<input type="file" id='picture' accept="image/gif,image/jpeg,image/bmp"></li>
+          <li>相册<input type="file" id='pictures' accept="image/gif,image/png,image/jpeg,image/bmp" onChange='showPicture(this)'></li>
           <li class='cancleEdit'>取消</li>
         </ul>
       </div>
@@ -72,6 +72,12 @@
       $('#aboutUs').click(function(){
          location.href='aboutUs.html'
       })
+      var showPicture = function (imgFile) {
+        console.log(111, window.URL.createObjectURL(imgFile.files[0]));
+        console.log(222, imgFile.files[0]);
+        document.getElementById("picture").src = window.URL.createObjectURL(imgFile.files[0]);
+        $('#editPicture').addClass('hiddens')
+      }
     </script>
   </body>
 </html>

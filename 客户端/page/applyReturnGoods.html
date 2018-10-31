@@ -31,9 +31,14 @@
         <li class='pic'>
           <label for="names">上传凭证</label>
           <div>
-            <a href="javascript:;" class="file">
-              <input type="file" name="" id="">
-            </a>
+            <ul class='images'>
+              <!-- <li class='image-item'><img src="../asset/img/tab_personal_default@2x.png" alt="上传失败"></li> -->
+              <li class='image-item pis'>
+                <a href="javascript:;" class="file">
+                  <input type="file" name="" id="">
+                </a>
+              </li>
+            </ul>
           </div>
         </li>
       </ul>
@@ -51,5 +56,18 @@
         location.href = 'personCenter.html'
       }, 1500);
     })
+    // 获取的files文件路径-暂时使用本地图片
+    var files = [
+      {url: '../asset/img/tab_personal_default@2x.png'},
+      {url: '../asset/img/tab_personal_default@2x.png'},
+      {url: '../asset/img/tab_personal_default@2x.png'},
+      {url: '../asset/img/tab_personal_default@2x.png'},
+      {url: '../asset/img/tab_personal_default@2x.png'}
+    ]
+    // 获取后添加dom渲染页面
+    $.each(files,function(index,value){
+      var newDom = $('<li class="image-item"><img src=" '+ value.url +'"></li>')
+      $('.images').prepend(newDom)
+    });
   </script>
 </html>

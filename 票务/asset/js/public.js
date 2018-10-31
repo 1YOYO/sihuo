@@ -10,7 +10,6 @@ function Rem() {
 }
 window.addEventListener('resize', Rem, false);
 Rem();
-
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
   WeixinJSBridge.call('hideToolbar');
   WeixinJSBridge.call('hideOptionMenu');
