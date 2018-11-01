@@ -7,7 +7,7 @@
   padding: 0.1rem 0.3rem;
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #fff;
 }
 #home .header .perform-img {
@@ -37,7 +37,7 @@
   box-sizing: border-box;
   background-color: #fff;
   font-size: 0.15rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 #home .perform-info .info {
   height: 30px;
@@ -51,7 +51,7 @@
 #home .perform-introduce {
   padding: 0.1rem 0.25rem;
   background-color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 #home .perform-introduce .introduce-header {
@@ -80,4 +80,45 @@
   height: 6px;
   margin-top: 7px;
   margin-right: 0.2rem;
+}
+#home .perform-introduce .more-introduce {
+  height: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #35cf76;
+  text-decoration: underline;
+  text-align: right;
+}
+#home .buy-tip {
+  padding: 0.1rem 0.25rem;
+  background-color: #fff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#home .buy-tip .tip-header {
+  height: 40px;
+  font-size: 0.15rem;
+  line-height: 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+}
+#home .buy-tip .tip-info {
+  box-sizing: border-box;
+  padding: 10px 0px;
+}
+#home .buy-tip .service-phone {
+  height: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #35cf76;
+  text-decoration: underline;
+  text-align: center;
+}
+#home .buy-btn {
+  height: 55px;
+  font-weight: bold;
+  line-height: 55px;
+  text-align: center;
+  color: #fff;
+  background-color: #35cf76;
+  font-size: 0.35rem;
 }
