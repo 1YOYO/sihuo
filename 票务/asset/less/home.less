@@ -1,0 +1,100 @@
+#home {
+  background-color: #F5F5F5;
+
+  .header {
+    height: 100px;
+    box-sizing: border-box;
+    padding: 0.1rem 0.3rem;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background-color: #fff;
+
+    .perform-img {
+      height: 80px;
+      width: 2rem;
+      margin-right: 25px;
+    }
+
+    .left {
+      font-size: 0.15rem;
+
+      .perform-title {
+        height: 50px;
+        font-weight: bold;
+      }
+
+      .perform-price {
+        height: 30px;
+        font-weight: bold;
+        color: red;
+        line-height: 30px;
+
+        span {
+          color: gray;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .perform-info {
+    padding: 0.1rem 0.25rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 0.15rem;
+    margin-bottom: 20px;
+
+    .info {
+      height: 30px;
+      line-height: 30px;
+
+      .icon {
+        width: 0.35rem;
+        vertical-align: middle;
+        margin-right: 0.2rem;
+      }
+    }
+  }
+
+  .perform-introduce {
+    padding: 0.1rem 0.25rem;
+    background-color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+    .introduce-header {
+      height: 40px;
+      font-size: 0.15rem;
+      line-height: 40px;
+      border-bottom: 1px solid fade(gray, 40);
+    }
+
+    .introduce-details {
+
+      .introduce-title {
+        font-size: 0.3rem;
+        height: 45px;
+        line-height: 45px;
+      }
+  
+      .introduce-info {
+        font-size: 0.15rem;
+        height: 25px;
+        line-height: 25px;
+
+        &::before {
+          display: block;
+          content: '';
+          float: left;
+          border: 2px solid #35cf76;
+          border-radius: 50%;
+          width: 6px;
+          height: 6px;
+          margin-top: 7px;
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+}
