@@ -134,6 +134,7 @@
   background-color: rgba(128, 128, 128, 0.2);
   top: 0px;
   left: 0px;
+  display: none;
 }
 #home .choose-session-dialog .dialog-container {
   position: absolute;

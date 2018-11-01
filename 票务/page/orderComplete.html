@@ -39,10 +39,34 @@
         </div>
       </div>
       <div class="actions">
-        <div class="complete btn">完成</div>
+        <a class="complete btn" href="./home.html">完成</a>
         <div class="save btn">保存电子票至相册</div>
       </div>
+
+      <div class="save-success-tip">
+        <div class="tip-container">
+          <img class="tip-icon" src="../asset/img/orderComplete/paySuccess.png">
+          <div class="tip-info">保存成功!</div>
+        </div>
+      </div>
     </div>
-    <script></script>
+    <script>
+      const dom = {
+        $saveBtn: $('#order-complete .actions .save'),
+        saveSuccessTip: $('#order-complete .save-success-tip')[0]
+      }
+
+      function showSaveSuccessTip () {
+        const { saveSuccessTip } = dom
+
+        saveSuccessTip.style.display = 'block'
+
+        setTimeout(e => {
+          saveSuccessTip.style.display = 'none'
+        }, 1500)
+      }
+
+      dom.$saveBtn.on('click', showSaveSuccessTip)
+    </script>
   </body>
 </html>
