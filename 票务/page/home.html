@@ -33,7 +33,7 @@
           <div class="introduce-info">演出时间：2018年11月28日晚22:00</div>
           <div class="introduce-info">演出地点：海南国际会议中心</div>
         </div>
-        <div class="more-introduce">更多介绍...</div>
+        <div class="more-introduce"><a href="./moreIntroduce.html">更多介绍...</a></div>
       </div>
 
       <div class="buy-tip">
@@ -41,11 +41,44 @@
         <div class="tip-info">
           购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知
         </div>
-        <div class="service-phone">客服电话：1555555555</div>
+        <div class="service-phone"><a href="tel:1555555555">客服电话：1555555555</a></div>
       </div>
 
       <div class="buy-btn">立即购票</div>
+
+      <div class="choose-session-dialog">
+        <div class="dialog-container">
+          <div class="dialog-header">选择场次<div class="close-tag">x</div></div>
+
+          <div class="session">2018年11月2日 20:00</div>
+          <div class="session">2018年11月3日 20:00</div>
+          <div class="session">2018年11月4日 20:00</div>
+        </div>
+      </div>
     </div>
-    <script></script>
+    <script>
+      const dom = {
+        $buyBtn: $('#home .buy-btn'),
+        chooseSessionDialog: $('#home .choose-session-dialog')[0],
+        $closeTag: $('#home .close-tag')
+      }
+
+      const data = {
+        // 选择场次弹窗显示状态
+        chooseSessionDialogStatus: false
+      }
+
+      function changeChooseSessionDialogStatus () {
+        const { chooseSessionDialog } = dom
+
+        data.chooseSessionDialogStatus = !data.chooseSessionDialogStatus
+
+        data.chooseSessionDialogStatus && (chooseSessionDialog.style.display = 'block')
+        !data.chooseSessionDialogStatus && (chooseSessionDialog.style.display = 'none')
+      }
+
+      dom.$buyBtn.on('click', changeChooseSessionDialogStatus)
+      dom.$closeTag.on('click', changeChooseSessionDialogStatus)
+    </script>
   </body>
 </html>
