@@ -1,17 +1,106 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <!-- <meta name="format-detection" content="telephone=no,email=no"> -->
-    <title>更多介绍</title>
-    <link href="../asset/css/normal.css" rel="stylesheet">
-    <link rel="stylesheet" href="../asset/css/moreIntroduce.css">
-    <script src='../asset/js/jquery.min.js'></script>
-    <script src='../asset/js/public.js'></script>
-  </head>
-  <body>
-    更多介绍
-    <script></script>
-  </body>
-</html>
+#order-complete {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0px 0.3rem;
+}
+#order-complete .pay-success {
+  box-sizing: border-box;
+  padding: 32px 0px;
+}
+#order-complete .pay-success .success-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 22px;
+}
+#order-complete .pay-success .success-tip {
+  font-size: 0.15rem;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+}
+#order-complete .ticket-tip {
+  box-sizing: border-box;
+  padding-top: 25px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  margin-bottom: 25px;
+}
+#order-complete .ticket-tip .ticket-title {
+  box-sizing: border-box;
+  padding: 0px 0.2rem;
+  font-weight: bold;
+  font-size: 0.3rem;
+}
+#order-complete .ticket-tip .ticket-info {
+  padding: 10px 0.2rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 0.15rem;
+  margin-bottom: 10px;
+}
+#order-complete .ticket-tip .ticket-info .info {
+  height: 30px;
+  line-height: 30px;
+}
+#order-complete .ticket-tip .ticket-info .info .icon {
+  width: 0.35rem;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+#order-complete .ticket-tip .ticket-price {
+  box-sizing: border-box;
+  padding: 0px 0.2rem;
+  font-size: 0.3rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+#order-complete .ticket-tip .ticket-price .left {
+  width: 50%;
+  text-align: left;
+}
+#order-complete .ticket-tip .ticket-price .right {
+  width: 50%;
+  text-align: right;
+}
+#order-complete .ticket-tip .ticket-num {
+  box-sizing: border-box;
+  padding: 20px 0.2rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.4);
+  display: flex;
+  flex-direction: row;
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+#order-complete .ticket-tip .ticket-num .left {
+  flex: 1;
+  line-height: 25px;
+}
+#order-complete .ticket-tip .ticket-num .right {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.1rem;
+}
+#order-complete .ticket-tip .ticket-num .right img {
+  width: 100%;
+  height: 100%;
+}
+#order-complete .actions {
+  display: flex;
+  flex-direction: row;
+}
+#order-complete .actions .complete {
+  margin-right: 0.6rem;
+}
+#order-complete .actions .btn {
+  background-color: #35cf76;
+  color: #fff;
+  font-size: 0.3rem;
+  font-weight: bold;
+  width: calc(50% - 0.3rem);
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+}
