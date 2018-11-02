@@ -1,3 +1,7 @@
+body{
+  background-color: #fff;
+
+}
 .red{
   background-color: #ff3939;
 }
@@ -28,8 +32,12 @@
 }
 .charge-text li {
   /*border: 1px solid red;*/
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   font-weight: bold;
+
+}
+.charge-text li:last-child {
+  margin-bottom: 0;
 
 }
 .charge-text li>span:nth-child(2){
@@ -40,4 +48,9 @@
   height: 15px;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 5px;
+}
+.show{
+  background-color: #f1efef;
+  height: 317px;
 }
