@@ -1,17 +1,43 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-    <!-- <meta name="format-detection" content="telephone=no,email=no"> -->
-    <title>更多介绍</title>
-    <link href="../asset/css/normal.css" rel="stylesheet">
-    <link rel="stylesheet" href="../asset/css/moreIntroduce.css">
-    <script src='../asset/js/jquery.min.js'></script>
-    <script src='../asset/js/public.js'></script>
-  </head>
-  <body>
-    更多介绍
-    <script></script>
-  </body>
-</html>
+.red{
+  background-color: #ff3939;
+}
+.orange {
+  background-color: #eb6100;
+}
+.yellow {
+  background-color: #f8b551;
+}
+.green {
+  background-color: #80c269;
+}
+.Blue {
+  background-color: #00b7ee;
+}
+.purple{
+  background-color: #8957a1;
+}
+.pink{
+  background-color: #f19ec2;
+}
+.gray{
+  background-color: #bfbfbf;
+}
+.charge-text{
+  padding: 25px 0.24rem;
+  font-size: 0.3rem;
+}
+.charge-text li {
+  /*border: 1px solid red;*/
+  margin-bottom: 30px;
+  font-weight: bold;
+
+}
+.charge-text li>span:nth-child(2){
+  margin-left: 56px;
+}
+.charge-text li span.cube{
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
