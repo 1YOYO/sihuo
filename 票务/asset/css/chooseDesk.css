@@ -169,6 +169,7 @@ body{
   width: 3.03rem;
   height: 0.84rem;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 .show .header img{
   width: 100%;

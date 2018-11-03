@@ -132,13 +132,13 @@
     </div>
     <div class='mengban'></div>
     <ul class='toggle-tiket'>
-      <li>
+      <!-- <li>
         <p class='posiionts'><span class='cube red'></span><span>20排6座</span></p>
         <p class='charges'><span>￥788.00</span><span class='x'>x</span></p>
-      </li>
+      </li> -->
       <li>
         <p class='posiionts'><span class='cube red'></span><span>20排6座</span></p>
-        <p class='charges'><span>￥788.00</span><span class='x'>x</span></p>
+        <p class='charges'><span>￥788.00</span></p>
       </li>
     </ul>
     <script>
@@ -166,36 +166,39 @@
       var selectingNum = 0
       
       var row = selected.length
-      for (var i = 0; i < row; i++) {
-        var col = selected[i].length
-        for (var j = 0; j < col; j++) {
-          if (selected[i][j] == 1) {
-            // 为1的为已选择的座位
-            var selectedDom = $('.col' + (i+1) + ' div')[j]
-            selectedDom.style='background-color: #bfbfbf'
-          } else {
-            // 点击选择座位
-            (function (i, j) {
-              var noSelect = $('.col' + (i+1) + ' div')[j]
-              $(noSelect).click(function () {
-                  $(noSelect).find('span').toggleClass('active')
-                if (selecteding[i][j] == 2) { // 已选择
-                  selecteding[i][j] = 0
-                  selectingNum -= 1
-                } else {
-                  $(noSelect).find('span').addClass('active')
-                  selecteding[i][j] = 2
-                  selectingNum += 1
-                }
-                changeStyle(selectingNum, selecteding)
-                if (selectingNum <= 0) {
-                  $('.tip').css({'display': 'none'})
-                } else {
-                  $('.tip').html(selectingNum)
-                  $('.tip').css({'display': 'inline-block'})
-                }
-              })
-            })(i, j)
+      selectFun()
+      function selectFun () {
+        for (var i = 0; i < row; i++) {
+          var col = selected[i].length
+          for (var j = 0; j < col; j++) {
+            if (selected[i][j] == 1) {
+              // 为1的为已选择的座位
+              var selectedDom = $('.col' + (i+1) + ' div')[j]
+              selectedDom.style='background-color: #bfbfbf'
+            } else {
+              // 点击选择座位
+              (function (i, j) {
+                var noSelect = $('.col' + (i+1) + ' div')[j]
+                $(noSelect).click(function () {
+                    $(noSelect).find('span').toggleClass('active')
+                  if (selecteding[i][j] == 2) { // 已选择
+                    selecteding[i][j] = 0
+                    selectingNum -= 1
+                  } else {
+                    $(noSelect).find('span').addClass('active')
+                    selecteding[i][j] = 2
+                    selectingNum += 1
+                  }
+                  changeStyle(selectingNum, selecteding)
+                  if (selectingNum <= 0) {
+                    $('.tip').css({'display': 'none'})
+                  } else {
+                    $('.tip').html(selectingNum)
+                    $('.tip').css({'display': 'inline-block'})
+                  }
+                })
+              })(i, j)
+            }
           }
         }
       }
@@ -209,13 +212,13 @@
         let str = ''
         for(var i = 0; i< selecteding.length; i++){
           for(var j = 0; j <selecteding[i].length; j++){
-            console.log(selecteding[i][j] == 2)
             if (selecteding[i][j] == 2) {
-              str += "<li><p class='posiionts'><span class='cube red'></span><span>20排6座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+              str += "<li data-row=" +i+ " data-col="+j+"><p class='posiionts'><span class='cube red'></span><span>" + (i+1)*1 +"排" + (j+1)*1 +"座</span></p><p class='charges'><span>￥788.00</span></p></li>"
             }
           }
         }
         $('.toggle-tiket').html(str)
+        console.log(tabSelect)
         if (tabSelect) {
           $('.seat-icon').css({'background': '#28cc6d'})
           $('.xuanzuo').css({
@@ -224,11 +227,45 @@
             })
           $('.xuanzuo').html("<span class='gopays'>去结算</span><span class='gopays-money'>￥2998.00</span>")
           $('.seat-icon').click(function () {
-            console.log(11111111111111111111111)
             $('.mengban').toggle()
             $('.toggle-tiket').toggle()
+            console.log('点击le')
           })
+        } else {
+          $('.seat-icon').css({'background': '#e9e9e9'})
+          $('.xuanzuo').css({
+            'background': '#e9e9e9',
+            'color': '#999'
+            })
+          $('.xuanzuo').html("请先选座")
         }
+
+        // 点击删除座位
+        // for(var i = 0; i < $('.toggle-tiket li').length; i++) {
+        //   (function (i) {
+        //     $($('.toggle-tiket li')[i]).find('.x').click(function () {
+        //       var rows = $('.toggle-tiket li')[i].dataset.row
+        //       var cols = $('.toggle-tiket li')[i].dataset.col
+        //       for(var x = 0; x< selecteding.length; x++){
+        //         for(var y = 0; y <selecteding[i].length; y++){
+        //           if (x == rows && y== cols) {
+        //             selecteding[x][y] = 0
+        //             selectingNum -= 1
+        //             var noselects = $('.col' + (x+1) + ' div')[y]
+        //             $(noselects).find('span').toggleClass('active')
+        //             if (selectingNum <= 0) {
+        //               selectingNum = 0
+        //              $('.tip').css({'display': 'none'})
+        //             } else {
+        //               $('.tip').html(selectingNum)
+        //               $('.tip').css({'display': 'inline-block'})
+        //             }
+        //           }
+        //         }
+        //       }
+        //     })
+        //   })(i)
+        // }
       }
     </script>
   </body>
