@@ -24,8 +24,212 @@
       </li>
     </ul>
     <div class='show'>
-      舞台
+      <div class='header'><img src="../asset/img/show.jpg"></div>
+      <ul class='seats'>
+        <li class='col1'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+        <li class='col2'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+        <li class='col3'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+        <li  class='col4'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+        <li  class='col5'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+        <li  class='col6'>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+          <div><span></span></div>
+        </li>
+      </ul>
     </div>
-    <script></script>
+    <div class='bottom-select'>
+      <div class='seat-icon'>
+        <span class='tip'></span>
+        <img src="../asset/img/orderComplete/seat-png.jpg">
+      </div>
+      <div class='xuanzuo'>请先选座</div>
+      <!-- <div class='xuanzuo'>
+        <span class='gopays'>去结算</span><span class='gopays-money'>￥2998.00</span>
+      </div> -->
+    </div>
+    <div class='mengban'></div>
+    <ul class='toggle-tiket'>
+      <li>
+        <p class='posiionts'><span class='cube red'></span><span>20排6座</span></p>
+        <p class='charges'><span>￥788.00</span><span class='x'>x</span></p>
+      </li>
+      <li>
+        <p class='posiionts'><span class='cube red'></span><span>20排6座</span></p>
+        <p class='charges'><span>￥788.00</span><span class='x'>x</span></p>
+      </li>
+    </ul>
+    <script>
+      // 已售为1
+      var selected = [
+        [0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+      ]
+     var selecteding = [
+        [0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+      ]
+      var selectingNum = 0
+      
+      var row = selected.length
+      for (var i = 0; i < row; i++) {
+        var col = selected[i].length
+        for (var j = 0; j < col; j++) {
+          if (selected[i][j] == 1) {
+            // 为1的为已选择的座位
+            var selectedDom = $('.col' + (i+1) + ' div')[j]
+            selectedDom.style='background-color: #bfbfbf'
+          } else {
+            // 点击选择座位
+            (function (i, j) {
+              var noSelect = $('.col' + (i+1) + ' div')[j]
+              $(noSelect).click(function () {
+                  $(noSelect).find('span').toggleClass('active')
+                if (selecteding[i][j] == 2) { // 已选择
+                  selecteding[i][j] = 0
+                  selectingNum -= 1
+                } else {
+                  $(noSelect).find('span').addClass('active')
+                  selecteding[i][j] = 2
+                  selectingNum += 1
+                }
+                changeStyle(selectingNum, selecteding)
+                if (selectingNum <= 0) {
+                  $('.tip').css({'display': 'none'})
+                } else {
+                  $('.tip').html(selectingNum)
+                  $('.tip').css({'display': 'inline-block'})
+                }
+              })
+            })(i, j)
+          }
+        }
+      }
+
+
+      // 如果选过座位可点击,假设已选
+      changeStyle(selectingNum, selecteding)
+      function changeStyle(selectingNum, selecteding) {
+        var tabSelect = selectingNum <= 0 ? false : true
+        // console.log(selecteding)
+        let str = ''
+        for(var i = 0; i< selecteding.length; i++){
+          for(var j = 0; j <selecteding[i].length; j++){
+            console.log(selecteding[i][j] == 2)
+            if (selecteding[i][j] == 2) {
+              str += "<li><p class='posiionts'><span class='cube red'></span><span>20排6座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+            }
+          }
+        }
+        $('.toggle-tiket').html(str)
+        if (tabSelect) {
+          $('.seat-icon').css({'background': '#28cc6d'})
+          $('.xuanzuo').css({
+            'background': '#28cc6d',
+            'color': '#fff'
+            })
+          $('.xuanzuo').html("<span class='gopays'>去结算</span><span class='gopays-money'>￥2998.00</span>")
+          $('.seat-icon').click(function () {
+            console.log(11111111111111111111111)
+            $('.mengban').toggle()
+            $('.toggle-tiket').toggle()
+          })
+        }
+      }
+    </script>
   </body>
-</html>
+</html> 
