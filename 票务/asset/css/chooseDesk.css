@@ -61,6 +61,9 @@ body{
   background-color: #f1efef;
   height: 317px;
 }
+.scale-container {
+  width: 100%;
+}
 .bottom-select{
   position: fixed;
   height: 54px;
