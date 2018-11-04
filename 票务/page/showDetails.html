@@ -10,7 +10,7 @@
     <script src='../asset/js/jquery.min.js'></script>
     <script src='../asset/js/public.js'></script>
   </head>
-  <body>
+  <body id='show-detail'>
     <div class='top-tab'>
       <span>场次标题场次标题</span>
       <span class='change-times'>更换场次 ▼</span>
@@ -44,11 +44,9 @@
     </div>
     <script>
       $('.bottom-tab').click(function () {
-        console.log()
         let bottomStyle = $('.bottom-all-tab').css('bottom')
         if (bottomStyle == '0px') {
-          console.log('aaaaaa')
-          $('.bottom-all-tab').css('bottom', '-258px')
+          $('.bottom-all-tab').css('bottom', '-242px')
           $('.show-money').css('display', 'inline-block')
           $('.hide-money').css('display', 'none')
         } else {
@@ -56,6 +54,9 @@
           $('.show-money').css('display', 'none')
           $('.hide-money').css('display', 'inline-block')
         }
+      })
+      $('.show').click(function () {
+        window.open('chooseDesk.html')
       })
     </script>
   </body>

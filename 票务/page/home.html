@@ -60,7 +60,8 @@
       const dom = {
         $buyBtn: $('#home .buy-btn'),
         chooseSessionDialog: $('#home .choose-session-dialog')[0],
-        $closeTag: $('#home .close-tag')
+        $closeTag: $('#home .close-tag'),
+        $session: $('.session'),
       }
 
       const data = {
@@ -79,6 +80,9 @@
 
       dom.$buyBtn.on('click', changeChooseSessionDialogStatus)
       dom.$closeTag.on('click', changeChooseSessionDialogStatus)
+      dom.$session.on('click', function() {
+        window.open('../page/showDetails.html')
+      })
     </script>
   </body>
 </html>

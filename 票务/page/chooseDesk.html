@@ -180,7 +180,7 @@
               (function (i, j) {
                 var noSelect = $('.col' + (i+1) + ' div')[j]
                 $(noSelect).click(function () {
-                    $(noSelect).find('span').toggleClass('active')
+                  $(noSelect).find('span').toggleClass('active')
                   if (selecteding[i][j] == 2) { // 已选择
                     selecteding[i][j] = 0
                     selectingNum -= 1
@@ -189,6 +189,7 @@
                     selecteding[i][j] = 2
                     selectingNum += 1
                   }
+                  $('.seat-icon').unbind('click');
                   changeStyle(selectingNum, selecteding)
                   if (selectingNum <= 0) {
                     $('.tip').css({'display': 'none'})
@@ -202,7 +203,6 @@
           }
         }
       }
-
 
       // 如果选过座位可点击,假设已选
       changeStyle(selectingNum, selecteding)
@@ -218,7 +218,7 @@
           }
         }
         $('.toggle-tiket').html(str)
-        console.log(tabSelect)
+        // console.log(tabSelect)
         if (tabSelect) {
           $('.seat-icon').css({'background': '#28cc6d'})
           $('.xuanzuo').css({
@@ -226,10 +226,10 @@
             'color': '#fff'
             })
           $('.xuanzuo').html("<span class='gopays'>去结算</span><span class='gopays-money'>￥2998.00</span>")
-          $('.seat-icon').click(function () {
+          
+          $('.seat-icon').bind('click', function () {
             $('.mengban').toggle()
             $('.toggle-tiket').toggle()
-            console.log('点击le')
           })
         } else {
           $('.seat-icon').css({'background': '#e9e9e9'})
@@ -267,6 +267,7 @@
         //   })(i)
         // }
       }
+
     </script>
   </body>
 </html> 
