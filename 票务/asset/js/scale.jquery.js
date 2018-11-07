@@ -1,5 +1,5 @@
 (function ($){
-	$.fn.scale = function (contentSelector) {
+	$.fn.scale = function (contentSelector, initWidth = false) {
 		if (!contentSelector) {
 			console.error('未设置可缩放DOM选择器')
 
@@ -24,6 +24,7 @@
 		// 初始化缩放容器宽高
 		let contentWidth = $content.width()
 		let contentHeight = $content.height()
+
 		// 初始化touch位置
 		let touchPos = false
 		// 初始化scale位置
@@ -40,9 +41,22 @@
 		// 初始化缩放DOM
 		$content.css({position: 'absolute', top: contentPos.top, left: contentPos.left})
 
-		$content.on('touchstart', touchStart)
-		$content.on('touchmove', touchMove)
-		$content.on('touchend', e => {
+		// 初始化宽度
+		if (initWidth) {
+			scale = containerWidth / contentWidth
+
+			contentPos.top = (contentHeight * scale / 2) - (contentHeight / 2)
+			contentPos.left = (containerWidth - contentWidth) / 2
+
+			$content.css({ position  : 'absolute',
+						   top       : contentPos.top,
+						   left      : contentPos.left,
+						   transform : `scale(${scale})` })
+		}
+
+		this.on('touchstart', touchStart)
+		this.on('touchmove', touchMove)
+		this.on('touchend', e => {
 			touchPos = false
 
 			scalePos = { one: false, two: false }
@@ -81,15 +95,6 @@
 			contentPos.left += minusPos[0]
 			contentPos.top += minusPos[1]
 
-			// 防止左侧越界
-			contentPos.left <= (contentWidth / -2) && (contentPos.left = contentWidth / -2 + 50)
-			// 防止右侧越界
-			contentPos.left >= (containerWidth - (contentWidth / 2)) && (contentPos.left = containerWidth - (contentWidth / 2) - 50)
-			// 防止顶部越界
-			contentPos.top <= (contentHeight / -2) && (contentPos.top = contentHeight / -2 + 50)
-			// 防止底部越界
-			contentPos.top >= (containerHeight - (contentHeight / 2)) && (contentPos.top = containerHeight - (contentHeight / 2) - 50)
-
 			$content.css({top: contentPos.top, left: contentPos.left})
 
 			touchPos = [pageX, pageY]
@@ -118,5 +123,7 @@
 
 			return Math.sqrt((minusX * minusX) + (minusY + minusY))
 		}
+
+		return this
 	}
 })(jQuery);
