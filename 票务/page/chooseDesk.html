@@ -193,7 +193,7 @@
             if (selected[i][j] == 1) {
               // 为1的为已选择的座位
               var selectedDom = $('.col' + (i+1) + ' div')[j]
-              selectedDom.style='background-color: #bfbfbf'
+              selectedDom && (selectedDom.style='background-color: #bfbfbf')
             } else {
               // 点击选择座位
               (function (i, j) {

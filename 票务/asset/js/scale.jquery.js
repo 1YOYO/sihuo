@@ -112,7 +112,7 @@
 
 			$('.debug').html(scale)
 
-			if (scale < 0.6) $content.css('transform', `scale(${scale = 1})`)
+			scale < 0.6 && $content.css('transform', `scale(${scale = 0.6})`)
 
 			scaleDis = currentDis
 		}
