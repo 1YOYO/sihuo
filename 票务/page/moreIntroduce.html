@@ -116,7 +116,26 @@
       <div class='jieshao'>购票须知购票须知购票须知购票须知购票须知购票须知购票须知购票须知，票须知购票须知购票须知购票须知购票须</div>
       <div class='tel'><a href="tel:10086">客服电话：1534554333</a></div>
     </div>
+    <div class="choose-session-dialog">
+      <div class="dialog-container">
+        <div class="dialog-header">选择场次<div class="close-tag">x</div></div>
+
+        <div class="session">2018年11月2日 20:00</div>
+        <div class="session">2018年11月3日 20:00</div>
+        <div class="session">2018年11月4日 20:00</div>
+      </div>
+    </div>
     <div class='go-pay'>立即购票</div>
-    <script></script>
+    <script>
+      $('.go-pay').click(function () {
+        $('.choose-session-dialog').toggle();
+      })
+      $('.close-tag').click(function () {
+        $('.choose-session-dialog').hide();
+      })
+      $('.session').click(function () {
+        window.open('showDetails.html')
+      })
+    </script>
   </body>
 </html>
