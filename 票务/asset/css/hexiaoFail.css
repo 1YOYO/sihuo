@@ -1,0 +1,26 @@
+#hexiao-success .img {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 120px;
+}
+#hexiao-success .tip {
+  font-size: 0.15rem;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#hexiao-success .btn {
+  width: 3.1rem;
+  height: 45px;
+  font-size: 0.3rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  background-color: #35cf76;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
