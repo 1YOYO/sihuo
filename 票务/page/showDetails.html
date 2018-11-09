@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <!-- <meta name="format-detection" content="telephone=no,email=no"> -->
+    <title>演出详情</title>
+    <link href="../asset/css/normal.css" rel="stylesheet">
+    <link rel="stylesheet" href="../asset/css/showDetails.css">
+    <script src='../asset/js/jquery.min.js'></script>
+    <script src='../asset/js/public.js'></script>
+  </head>
+  <body id='show-detail'>
+    <div class='top-tab'>
+      <span>场次标题场次标题</span>
+      <span class='change-times'>更换场次 ▼</span>
+    </div>
+    <div class='show'>
+      <div><img src="../asset/img/showTab.png" alt=""></div>
+    </div>
+    <div class='bottom-all-tab'>
+      <div class='bottom-tab'>
+        <span>全部票价</span>
+        <span class='show-money'>▲</span>
+        <span class='hide-money'>▼</span>
+      </div>
+      <ul class='charge-text'>
+        <li>
+          <span class='col1'> <span class='red cube'></span>￥888.00</span>
+          <span class='col2'> <span class='orange cube'></span>￥788.00</span>
+        </li>
+        <li>
+          <span class='col3'> <span class='yellow cube'></span>￥688.00</span>
+          <span class='col4'> <span class='green cube'></span>￥588.00</span>
+        </li>
+        <li>
+          <span class='col5'> <span class='Blue cube'></span>￥488.00</span>
+          <span class='col6'> <span class='purple cube'></span>￥288.00</span>
+        </li>
+        <li>
+          <span class='col7'> <span class='pink cube'></span>￥70.00</span>
+        </li>
+      </ul>
+    </div>
+    <div class="choose-session-dialog">
+      <div class="dialog-container">
+        <div class="dialog-header">选择场次<div class="close-tag">x</div></div>
+
+        <div class="session">2018年11月2日 20:00</div>
+        <div class="session">2018年11月3日 20:00</div>
+        <div class="session">2018年11月4日 20:00</div>
+      </div>
+    </div>
+    <script>
+      $('.bottom-tab').click(function () {
+        let bottomStyle = $('.bottom-all-tab').css('bottom')
+        if (bottomStyle == '0px') {
+          $('.bottom-all-tab').css('bottom', '-242px')
+          $('.show-money').css('display', 'inline-block')
+          $('.hide-money').css('display', 'none')
+        } else {
+          $('.bottom-all-tab').css('bottom', '0px')
+          $('.show-money').css('display', 'none')
+          $('.hide-money').css('display', 'inline-block')
+        }
+      })
+      $('.show').click(function () {
+        window.open('chooseDesk.html')
+      })
+      $('.change-times').click(function () {
+        $('.choose-session-dialog').show()
+      })
+      $('.close-tag').click(function () {
+        $(this).hide()
+      })
+      $('.session').click(function () {
+        window.open('showDetails.html')
+      })
+    </script>
+  </body>
+</html>
