@@ -41,6 +41,8 @@ body{
   /*border: 1px solid red;*/
   margin-bottom: 15px;
   font-weight: bold;
+  display: inline-block;
+  width: 45%;
 
 }
 .charge-text li:last-child {
