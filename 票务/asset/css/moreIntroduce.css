@@ -1,8 +1,8 @@
 /*
 * @Author: wyy
 * @Date:   2018-10-31 10:12:42
-* @Last Modified by:   wyy
-* @Last Modified time: 2018-10-31 16:31:25
+* @Last Modified by:   YOYO
+* @Last Modified time: 2018-11-13 09:32:12
 */
 body{
   background-color: #f5f5f5;
@@ -117,6 +117,7 @@ body{
 .tel{
   text-align: center;
   padding: 30px 0;
+  padding-bottom: 55px;
 }
 .tel a{
   color: #28cc6d;

@@ -86,6 +86,7 @@ body{
   padding: 23px 0.24rem;
   height: calc(100vh - 491px);
   color: #999;
+  margin-bottom: 55px;
 }
 .band-tel-more{
   /*border: 1px solid red;*/
