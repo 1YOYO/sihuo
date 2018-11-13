@@ -16,6 +16,8 @@
     <ul class='charge-text'>
       <li>
         <span><span class='cube red'></span>￥888.00</span>
+      </li>
+      <li>
         <span><span class='cube orange'></span>￥788.00</span>
       </li>
       <li>
@@ -146,25 +148,29 @@
       </li> -->
     </ul>
     <script>
-      console.log(selected1)
 
       // 已售为
-      var selected = [
-      
-      ]
-      selected = selected1
-      // selected = selected2
+      var selected = []
+      var seatType = 1 // 假设选图1座位
+      if (seatType === 1) {
+        $('.seats').removeClass("seats2").addClass('seats1')
+        selected = seat1
+      } else {
+        $('.seats').removeClass("seats1").addClass('seats2')
+        selected = seat2
+      }
       // 用来动态选择作为的模型
-      var selecteding = [
-        [0, 0, 0, 0, 0, 0, 0, 1, 0],
-        [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
-
-        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
-      ]
+      var selecteding = JSON.parse(JSON.stringify(selected))
+      // 假设已售的作为为第一排、第二排、第三排、的所有，那么将他们的数据模型设置为1
+      $(selecteding).each(function(rowIndex, row) {
+        $(row).each(function(colIndex, col) {
+          if (rowIndex == 1 || rowIndex == 2 || rowIndex == 0) {
+            selecteding[rowIndex][colIndex] = 1
+          } else {
+            selecteding[rowIndex][colIndex] = 0
+          }
+        });
+      });
 
       var selectingNum = 0 // 已经选择的座位个数
       
@@ -172,10 +178,16 @@
       buildSeat()
       function buildSeat () {
         let seatListStr = ''
-        $(selected1).each(function(rowIndex, rowVal) {
+        $(selected).each(function(rowIndex, rowVal) {
           seatListStr += "<li class='col" + (rowIndex+1)*1 + "'>"
           $(rowVal).each(function(colIndex, colVal) {
-            seatListStr += "<div><span>" + colVal + "</span></div>"
+            if (rowIndex == 9 || rowIndex == 10 || rowIndex == 11) { //假设后三排为红色价格
+              seatListStr += "<div class='red'><span>" + colVal + "</span></div>"
+            } else if (rowIndex == 8 || rowIndex == 7 || rowIndex == 6) {
+              seatListStr += "<div class='orange'><span>" + colVal + "</span></div>"
+            } else {
+              seatListStr += "<div class='yellow'><span>" + colVal + "</span></div>"
+            }
           })
           seatListStr += "<li>"
         });
@@ -186,12 +198,13 @@
       selectFun()
 
       function selectFun () {
-        var row = selected.length // 几排？
+        var row = selecteding.length // 几排？
         for (var i = 0; i < row; i++) {
-          var col = selected[i].length
+          var col = selecteding[i].length
+          console.log(col)
           for (var j = 0; j < col; j++) {
-            if (selected[i][j] == 1) {
-              // 为1的为已选择的座位
+            if (selecteding[i][j] == 1) {
+              // 为1的为已售
               var selectedDom = $('.col' + (i+1) + ' div')[j]
               selectedDom && (selectedDom.style='background-color: #bfbfbf')
             } else {
@@ -209,6 +222,7 @@
                     selectingNum += 1
                   }
                   $('.seat-icon').unbind('click');
+                  $('.xuanzuo').unbind('click');
                   changeStyle(selectingNum, selecteding) // 选择完之后重新调用该函数使其底部栏响应的样式变化
                 })
               })(i, j)
@@ -226,7 +240,13 @@
         for(var i = 0; i< selecteding.length; i++){
           for(var j = 0; j <selecteding[i].length; j++){
             if (selecteding[i][j] == 2) {
-              str += "<li data-row=" +i+ " data-col="+j+"><p class='posiionts'><span class='cube red'></span><span>" + (i+1)*1 +"排" + (j+1)*1 +"座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+              if (i == 9 || i == 10 || i == 11) {
+                str += "<li data-row=" +i+ " data-col="+j+"><p class='posiionts'><span class='cube red'></span><span>" + (i+1)*1 +"排" + selected[i][j] +"座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+              } else if (i == 9 || i == 10 || i == 12) {
+                str += "<li data-row=" +i+ " data-col="+j+"><p class='posiionts'><span class='cube orange'></span><span>" + (i+1)*1 +"排" + selected[i][j] +"座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+              } else {
+                str += "<li data-row=" +i+ " data-col="+j+"><p class='posiionts'><span class='cube yellow'></span><span>" + (i+1)*1 +"排" + selected[i][j] +"座</span></p><p class='charges'><span>￥788.00</span><span class='x'>x</span></p></li>"
+              }
             }
           }
         }
@@ -247,6 +267,9 @@
             'color': '#fff'
             })
           $('.xuanzuo').html("<span class='gopays'>去结算</span><span class='gopays-money'>￥2998.00</span>")
+          $('.xuanzuo').bind('click', function () {
+            window.open('paymentOrder.html')
+          })
           
           $('.seat-icon').bind('click', function () {
             $('.mengban').toggle()
@@ -266,13 +289,30 @@
       // 点击列表删除响应的座位
       function delectDomlist() {
         $('.toggle-tiket li .x').click(function(){
-          console.log(222, this)
+          var i = $(this).parents('li')[0].dataset.row * 1
+          var j = $(this).parents('li')[0].dataset.col * 1
+          var noSelect = $('.col' + (i+1) + ' div')[j]
+          $(noSelect).find('span').toggleClass('active')
+          if (selecteding[i][j] == 2) { // 已选择
+            selecteding[i][j] = 0
+            selectingNum -= 1
+          } else {
+            $(noSelect).find('span').addClass('active')
+            selecteding[i][j] = 2
+            selectingNum += 1
+          }
+          $('.seat-icon').unbind('click');
+          changeStyle(selectingNum, selecteding) // 选择完之后重新调用该函数使其底部栏响应的样式变化
+          if (selectingNum <= 0) {
+            $('.mengban').hide()
+            $('.toggle-tiket').hide()
+          }
         })
       }
 
       // 座位放大缩小
       // $('.scale-container').scale('.seats')
-      $('.show').scale('.scale-container')
+      $('.show').scale('.scale-container', true)
     </script>
   </body>
 </html> 
