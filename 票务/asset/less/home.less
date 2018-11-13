@@ -26,11 +26,17 @@
       font-size: 0.3rem;
 
       .perform-title {
-        height: 50px;
+        height: 40px;
         font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       .perform-price {
+        margin-top: 10px;
         height: 30px;
         font-weight: bold;
         color: red;
