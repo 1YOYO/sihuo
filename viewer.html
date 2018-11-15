@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="./viewer.css">
+</head>
+<body>
+	<h1>RTSP to Websocket Demo</h1>
+
+	<div class="xttblog">
+		<ul class="box">
+			<li><video id="video_0" controls autoplay preload="auto"
+					width="320" height="264">
+				</video></li>
+		</ul>
+	</div>
+
+	<script>
+
+    var mimeCodec = 'video/mp4; codecs="avc1.42e028"';
+
+    var videoWall = [];//document.getElementById('video_1');
+    var sourceBufferList = [];
+    var mediaSourceList = [];
+    var chList = [ch1]
+
+    createMediaSource();
+
+    function createMediaSource() {
+        if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
+            for (i = 0; i < 1; i++) {
+                var ms = new MediaSource;
+                var vd = document.getElementById('video_'+i);
+                mediaSourceList.push(ms);
+                videoWall.push(vd)
+
+                videoWall[i].src = URL.createObjectURL(mediaSourceList[i]);
+                mediaSourceList[i].addEventListener('sourceopen', chList[i]);
+            }
+
+            //video.src = URL.createObjectURL(mediaSource[0]);
+            //mediaSource[0].addEventListener('sourceopen', ch1);
+        } else {
+            console.error('Unsupported MIME type or codec: ', mimeCodec);
+        }
+
+        console.log("Done with createMediaSource");
+    }
+	function ch1(_) {
+        addSourceBuffer(0, "ws://218.28.235.126:9090/ch2?vedio=ed3305e3d63c4497914e5ce2e2720f0b");
+	}
+    function addSourceBuffer (idx, wsurl) {
+
+        sourceBufferList.push(mediaSourceList[idx].addSourceBuffer(mimeCodec));
+
+
+        videoWall[idx].addEventListener('canplay', function () {
+            videoWall[idx].play();
+        });
+
+        console.log("Done with addSourceBuffer");
+
+        var ws = new WebSocket(wsurl);
+        ws.binaryType = "arraybuffer";
+
+		
+        ws.onmessage = function (evt) {
+            if (evt.data instanceof ArrayBuffer) {
+            	try {
+            		var data=new Uint8Array(evt.data);
+	            		if (data.byteLength>0){
+	                		sourceBufferList[idx].appendBuffer(new Uint8Array(evt.data));
+	            		}
+         		　　} catch(error) {
+	         		　　console.log(error)
+	         		　　console.log(evt.data)
+         		　　}
+            }
+
+        };
+
+        ws.onclose = function(evt) {
+            console.log("WebSocket is closed: ", evt.reason, evt.code);
+        };
+
+        ws.onerror = function (evt) {
+            console.log("WebSocket error: ", evt.data);
+        }
+		//ws.close();
+    }
+
+</script>
+</body>
+</html>
