@@ -102,6 +102,7 @@ body{
   text-align: center;
   height: 54px;
   float: right;
+  font-size: 0.34rem;
 }
 .toggle-tiket{
   background: #fff;
