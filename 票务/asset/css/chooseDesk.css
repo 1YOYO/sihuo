@@ -61,7 +61,8 @@ body{
 }
 .show{
   background-color: #f1efef;
-  height: 317px;
+  /*height: 317px;*/
+  height: 4rem;
 }
 .scale-container {
   width: 21rem;
@@ -287,13 +288,12 @@ body{
   font-size: 12px;
   color: #999;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0.6rem;
 }
-.tip-red span{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(../img/show.png);
+.tip-red img{
+  width: 25px;
+  height: 30px;
+  margin-right: 8px;
   vertical-align: middle;
-  margin-right: 5px;
+  padding-bottom: 8px;
 }
