@@ -242,13 +242,22 @@ body{
 .seats1 li.col3 div:nth-child(6), .seats1 li.col3 div:nth-child(23){
   margin-right: 2rem;
 }
-.seats1 li.col4 div:nth-child(8), .seats1 li.col4 div:nth-child(27),
-.seats1 li.col5 div:nth-child(8), .seats1 li.col5 div:nth-child(27),
+
 .seats1 li.col6 div:nth-child(8), .seats1 li.col6 div:nth-child(27),
 .seats1 li.col7 div:nth-child(8), .seats1 li.col7 div:nth-child(27),
 .seats1 li.col8 div:nth-child(8), .seats1 li.col8 div:nth-child(27){
   margin-right: 1.5rem;
 }
+
+.seats1 li.col4 div:nth-child(9), .seats1 li.col4 div:nth-child(27),
+.seats1 li.col5 div:nth-child(9), .seats1 li.col5 div:nth-child(27){
+  margin-right: 1.75rem;
+}
+
+.seats1 li.col4 div:nth-child(35), .seats1 li.col5 div:nth-child(35){
+  margin-right: 0.48rem;
+}
+
 .seats1 li.col9 div:nth-child(7), .seats1 li.col9 div:nth-child(27),
 .seats1 li.col10 div:nth-child(7), .seats1 li.col10 div:nth-child(27){
   margin-right: 1.23rem;
